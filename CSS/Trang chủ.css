@@ -6,6 +6,7 @@ body {
   color: black;
   font-family: "Mulish", sans-serif;
 }
+
 #menu {
   position: -webkit-sticky;
   position: sticky;
@@ -15,39 +16,25 @@ body {
   background-color: #ffffff;
   box-shadow: 0px 5px 10px rgba(150, 150, 220, 0.2);
   display: flex;
-  /* overflow: hidden; */
   box-sizing: border-box;
   z-index: 200;
-}
-.logo {
-  width: 20%;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
+  padding-left: 7%;
+  padding-right: 7%;
 
+}
 #menu ul {
   margin-left: 15px;
   float: left;
   background-color: rgb(255, 255, 255);
   list-style-type: none;
-  width: 850px;
+  width: 60%;
   height: 70px;
+  box-sizing: border-box;
 }
-#menu .trangchu1 a {
-  color: #1e2132;
-  text-decoration: none;
-  font-size: 16px;
-}
-#menu .trangchu a {
-  color: #1464f4;
-  text-decoration: none;
-  font-size: 16px;
-}
+
 #menu > ul > li {
   display: inline-block;
-  width: 100px;
+  width: 92px;
   font-size: 14px;
   line-height: 72px;
   position: relative;
@@ -64,13 +51,27 @@ body {
   background-color: rgba(174, 182, 180, 0.778);
   border-radius: 10px;
   width: auto;
+  
 }
 .submenu {
   display: none;
   position: absolute;
   box-shadow: 0px 5px 10px rgba(2, 1, 1, 0.5);
 }
-
+#menu .trangchu1 a {
+  color: #1e2132;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.24px
+}
+#menu .trangchu a {
+  color: #1464f4;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.24px
+}
 #menu > ul > li:hover > .submenu {
   display: block;
   margin-top: -20px;
@@ -82,13 +83,23 @@ body {
   border-radius: 10px;
   height: auto;
 }
+.logo {
+  width: 150px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+   
+  }
+  
 .timkiem-taikhoan {
-  float: left;
+  display: flex;
   height: 72px;
-  width: 270px;
-  margin-top: 25px;
-  margin-left: 10px;
+  width: 28%;
+  justify-content: flex-end;
+
+  align-items: center;
 }
+
 .timkiem-taikhoan i {
   margin-right: 10px;
 }
@@ -546,7 +557,7 @@ cursor: pointer;
   transition:none;
 }
 .user-name-anh{
-  background-image: url('/Hình ảnh/congnghe-avt1.jpg');
+background-image: url('/Hình ảnh/congnghe-avt1.jpg');
 width: 32px;
 height: 32px;
 border-radius: 50px;
@@ -861,7 +872,9 @@ position: absolute;
   .docnhieunhat-into-title a {
     font-size: 16px;
   }
-
+  .menu1 .trangchu1.hide {
+    display: none;
+  }
 
   /* Công nghệ */
   .congnghe-cards{
