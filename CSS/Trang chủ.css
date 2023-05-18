@@ -138,6 +138,8 @@ body {
 .slider{
   width: 100%;
   position: relative;
+  height:800px;
+
 }
 
 .slider-prev, .slider-next{
@@ -193,6 +195,9 @@ body {
   object-fit: cover;
 
 }
+.tieude-slider{
+  font-size: 32px;
+}
 .slider-title{
   padding: 4.5% 7%;
 
@@ -217,14 +222,15 @@ body {
 }
 .slider-wrapper {
   width: 100%;
-  height:800px ;
+  height:100% ;
   overflow: hidden;
   position: relative;
 }
 .slider-main {
   display: flex;
   position: relative;
-  transition: transform 0.25s linear;
+  transition: transform 0.3s linear;
+  width: 100%;
   height: 100%;
 }
 .slider-item {
@@ -667,10 +673,13 @@ cursor: pointer;
   padding-bottom: 25px;
 }
 .card-chinh-title a{
-  font-size: 24px;
+  
   font-weight: 300;
   text-decoration: none;
   color: rgb(255, 255, 255);
+}
+.tieude-congnghe{
+  font-size: 24px;
 }
 .card-chinh-name{
   display: flex;
@@ -680,13 +689,22 @@ cursor: pointer;
   transition:none;
 }
 .user-name-anh{
-background-image: url('/Hình ảnh/congnghe-avt1.jpg');
+background-image: url('../Hình ảnh/congnghe-avt1.jpg');
 width: 32px;
 height: 32px;
 border-radius: 50px;
 background-size: cover;
   background-position: center;
   margin-right: 10px;
+}
+.user-name-image{
+  width: 32px;
+height: 32px;
+border-radius: 50px;
+background-size: cover;
+  background-position: center;
+  margin-right: 10px;
+  overflow: hidden;
 }
 .card-chinh-name a{
   color: white;
@@ -1253,6 +1271,16 @@ padding-bottom: 20px;
     .logoPC{
       display:none;
     }
+
+    /* SLIDER */
+    
+    .slider{
+      width: 100%;
+      height: 300PX;
+    }
+    .tieude-slider{
+      font-size: 20px;
+    }
     /* Đời sống */
     .doisong-card{
       width: 95%;
@@ -1341,10 +1369,16 @@ padding-bottom: 20px;
   .Tapchi {
     width: 90%;
   }
+
+  /* slider */
+  .tieude-slider{
+    font-size: 2px;
+  }
   /* tin vinfast */
   .khunganh {
     height: 130px;
   }
+ 
   /* Diễn đàn */
   .card-diendan-image {
     height: 201px;
