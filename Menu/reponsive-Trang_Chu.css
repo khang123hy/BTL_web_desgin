@@ -148,6 +148,24 @@
       .timkiem-mobile-btn{
         display: none;
       }
+
+      #menu > ul > li.trangchu2{
+        display: none;
+       
+
+      }
+      #menu > ul > li.trangchu2 >hr{
+        display: none;
+      }
+      #menu > ul > li.trangchu2 >a{
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        color: #050609;
+      }
+      img.duongkethang-dangnhap {
+        display: none;
+    }
 /* mobile: with < 740px  */
 @media only screen and (max-width: 740px) {
 
@@ -245,7 +263,21 @@
         width: 100%;
       }
       
-      
+      #menu > ul > li.trangchu2{
+        display: block;
+      }
+      #menu > ul > li.trangchu2 >hr{
+        display: block;
+      }
+      #menu > ul > li.trangchu2 >a{
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        color: #050609;
+      }
+      img.duongkethang-dangnhap {
+        display: none;
+    }
 }
 
 /* table: with < 1024px  */
@@ -257,6 +289,7 @@
   }
   #menu ul {
     display: none;
+    width: 90%;
   }
   .timkiem-taikhoan{
     width: 100%;
@@ -286,6 +319,23 @@
   #menu > ul > li{
     width: 18%;
   }
+  #menu > ul > li.trangchu2{
+    display: block;
+
+
+  }
+  #menu > ul > li.trangchu2 >hr{
+    display: none;
+  }
+  #menu > ul > li.trangchu2 >a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #050609;
+  }
+  img.duongkethang-dangnhap {
+    display: block;
+}
 }
 @media only screen and (max-width: 740px)  {
    .menu2 {
