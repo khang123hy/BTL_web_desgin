@@ -7,134 +7,7 @@ body {
   font-family: "Mulish", sans-serif;
 }
 
-#menu {
-  position: -webkit-sticky;
-  position: sticky;
-  width: 100%;
-  top: 0px;
-  height: 72px;
-  background-color: #ffffff;
-  box-shadow: 0px 5px 10px rgba(150, 150, 220, 0.2);
-  display: flex;
-  box-sizing: border-box;
-  z-index: 200;
-  padding-left: 7%;
-  padding-right: 7%;
-
-}
-#menu ul {
-  margin-left: 15px;
-  float: left;
-  background-color: rgb(255, 255, 255);
-  list-style-type: none;
-  width: 60%;
-  height: 100%;
-
-}
-.logoTL_MB{
-  display: none;
-}
-#menu > ul > li {
-  display: inline-block;
-  width: 12%;
-  min-width: 40px;
-  height: 100%;
-  font-size: 14px;
-  line-height: 72px;
-  position: relative;
-  text-align: center;
-  font-size: 16px; 
-}
-#menu > ul > li > ul li {
-  width: 200px;
-  line-height: 30px;
-  text-align: left;
-  padding-left: 10px;
-  position: relative;
-}
-#menu .submenu li:hover {
-  background-color: rgba(174, 182, 180, 0.778);
-  border-radius: 10px;
-  width: auto;
-  
-}
-.submenu {
-  display: none;
-  position: absolute;
-  box-shadow: 0px 5px 10px rgba(2, 1, 1, 0.5);
-}
-#menu .trangchu1 a {
-  color: #1e2132;
-  text-decoration: none;
-  
-  font-weight: 600;
-  letter-spacing: -0.24px
-}
-#menu .trangchu a {
-  color: #1464f4;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: -0.24px
-}
-#menu > ul > li:hover > .submenu {
-  display: block;
-  margin-top: -20px;
-}
-
-#menu li:hover > .submenu {
-  display: block;
-  width: auto;
-  border-radius: 10px;
-  height: auto;
-}
-.logo {
-  width: 150px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-   
-  }
-  
-.timkiem-taikhoan {
-  display: flex;
-  height: 72px;
-  width: 28%;
-  justify-content: flex-end;
-
-  align-items: center;
-}
-
-.timkiem-taikhoan i {
-  margin-right: 10px;
-}
-
-.btn-dangky {
-  background-color: rgb(20, 100, 244);
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  margin-left: 8px;
-  cursor: pointer;
-  font-size: 16px;
-}
-.btn-dangnhap {
-  background-color: #ffffff;
-  color: #050609;
-  border: none;
-  padding: 8px 16px;
-  margin-left: 8px;
-  cursor: pointer;
-  font-size: 16px;
-}
-.btn-dangky:hover {
-  background-color: rgb(30, 55, 238);
-}
-
-.btn-dangnhap:hover {
-  color: #1464f4;
-}
-
-
+/*START----------------------------------------------------- slider */
 .slider{
   width: 100%;
   position: relative;
@@ -1258,20 +1131,7 @@ padding-bottom: 20px;
 /* mobile: with < 740px  */
 @media only screen and (max-width: 740px) {
 
-    /* MENU */
-    #menu ul {
-      display: none;
-    }
-    .timkiem-taikhoan{
-      width: 100%;
-    }
-    .logoTL_MB{
-      display:block;
-    }
-    .logoPC{
-      display:none;
-    }
-
+   
     /* SLIDER */
     
     .slider{
@@ -1279,8 +1139,33 @@ padding-bottom: 20px;
       height: 300PX;
     }
     .tieude-slider{
-      font-size: 20px;
+      font-size: 17px;
+      font-weight: 400;
     }
+    .card-chinh-name a{
+      font-size: 9px;
+    }
+    .slider-dots li{
+      width: 8px;
+      height: 8px;
+    }
+    .slider-dots{
+      bottom: 12px;
+    }
+    .user-name-image{
+      width: 25px;
+    height: 25px;
+    }
+    .card-chinh-title{
+      padding-bottom: 17px;
+    }
+    .card-chinh-time{
+      font-size: 9px;
+    }
+    .card-chinh-name{
+      margin-bottom: 23px;
+    }
+
     /* Đời sống */
     .doisong-card{
       width: 95%;
@@ -1359,16 +1244,6 @@ padding-bottom: 20px;
 
 /* table: with < 1024px  */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
-  /* MENU */
-  #menu ul {
-    display: none;
-  }
-  .timkiem-taikhoan{
-    width: 100%;
-  }
-  .Tapchi {
-    width: 90%;
-  }
 
   /* slider */
   .tieude-slider{

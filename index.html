@@ -4,30 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang chủ</title>
-
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="./CSS/Trang chủ.css" />
-    <link
-      rel="stylesheet"
-      href="fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css"
-    />
-    <link
-      rel="stylesheet"
-      href="fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"
-    />
+    <link  rel="icon" href="./Hình ảnh/logo4.png" type="image/png">
+    <title>Trang chủ - Cộng đồng VinFast Toàn cầu</title>
+    <link rel="stylesheet" href="./Menu/reponsive-Trang_Chu.css">
+    <link rel="stylesheet" href="./CSS/reset.css" />
+    <link      rel="stylesheet"     href="fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css"    />
+    <link      rel="stylesheet"      href="fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+    rel="stylesheet"
     />
+    <link rel="stylesheet" href="./CSS/index.css" />
   </head>
   <body>
-    <script src="./JS/jquery-3.7.0.min.js"></script>
-
-    <script src="./JS/Trang chủ.js">
-    </script>
+   
+    <!-- START ---------------------------------------------------------------------------------MENU -->
     <div id="menu">
       <div class="logo">
         <img
@@ -39,19 +32,21 @@
         />
         <img
           width="50px"
-          max-height="74px"
+          max-height="100%"
           src="./Hình ảnh/LOGO2.png"
           alt=""
           class="logoTL_MB"
         />
       </div>
-
+      <div class="timkiem-mobile-btn">
+        <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+      </div>
       <ul class="menu2">
         <li class="trangchu">
-          <a href="#"> <b> Trang chủ</b> </a>
+          <a  href="#"> <b> Trang chủ</b> </a>
         </li>
         <li class="trangchu1">
-          <a href="#"> <b>Tin tức</b> <i class="fa-solid fa-angle-down"></i></a>
+          <a href="#trang"> <b>Tin tức</b> <i class="fa-solid fa-angle-down"></i></a>
           <ul class="submenu">
             <li>
               <a href="#">Tin tức VinFast</a>
@@ -75,7 +70,7 @@
         </li>
 
         <li class="trangchu1">
-          <a href="#"
+          <a href="#trang"
             ><b>Diễn đàn </b> <i class="fa-solid fa-angle-down"></i
           ></a>
           <ul class="submenu">
@@ -115,15 +110,25 @@
           <a href="#"><b>Sự kiện</b></a>
         </li>
         <li class="trangchu1">
-          <a href="#"><b>Thư viện</b></a>
+          <a href="./Thư viện.html"><b>Thư viện</b></a>
         </li>
       </ul>
       <div class="timkiem-taikhoan">
-        <i class="fa-solid fa-magnifying-glass fa-xl"> </i> |
-        <button class="btn-dangnhap" value="Đăng nhập">Đăng nhập</button>
+        <i class="fa-solid fa-magnifying-glass fa-xl"> </i> 
+        <img width="20px" height="30px" src="./Hình ảnh/icons8_vertical_line_50px_3.png" alt="">
+        <a href="./Đăng nhập.html">
+          
+          <button class="btn-dangnhap" value="Đăng nhập"  >Đăng nhập</button>
+        </a>
+
         <button class="btn-dangky" value="Đăng ký">Đăng ký</button>
       </div>
+      <div class="menu-mobile-btn">
+        <i class="fa-solid fa-bars" style="color: #020203;"></i>
+      </div>
+   
     </div>
+    <!-- END ---------------------------------------------------------------------------------MENU -->
 
     <!-- START ---------------------------------------------------------------------------------------------SLIDER -->
     <div class="slider">
@@ -1858,6 +1863,9 @@
       </div>
     </footer>
 
+    <script src="./JS/jquery-3.7.0.min.js"></script>
 
+    <script src="./Menu/Menu.js">  </script>
+    <script src="./JS/index.js">  </script>
   </body>
 </html>

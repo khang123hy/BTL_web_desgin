@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    position: 0px;
+  }
+  body {
+    color: black;
+    font-family: "Mulish", sans-serif;
+    background-image: linear-gradient(rgb(255,255,255),rgb(254,254,254));
+  }

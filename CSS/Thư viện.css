@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+    position: 0px;
+  }
+  body {
+    color: black;
+    font-family: "Mulish", sans-serif;
+    background-image: linear-gradient(rgb(255,255,255),rgb(254,254,254));
+  }
+
+  main{
+    width: 84%;
+    margin: 0 auto;
+    
+  }
+#timkiem-contener{
+    width: 100%;
+    height: 400px;
+    background-image: url("../Hình ảnh/Thư viện/backgroud-timkiem.png");
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.timkiems{
+    
+    width: 100%;
+}
+.timkiem-title{
+    width: 100%;
+    font-size: 36px;
+    font-weight: 300;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: -20px;
+}
+.timkiem-input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.icon-timkiem{
+    width: 800px;
+    position: relative;
+}
+#txt-Timkiem{
+
+    width: 100%;
+    height: 77px;
+    padding: 15px 18px;
+    padding-left: 75px;
+
+    outline: none;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255,0.8);
+   
+    border-radius: 6px;
+    color: #595959;
+}
+#txt-Timkiem::placeholder{
+    font-size: 20px;
+}
+.icon-timkiem i{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+}
+
+#cards-thuvien{
+    border-top:0.5px solid rgba(98, 97, 97, 0.1);
+    padding-top: 8px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+
+   margin-bottom: 20px ;
+
+}
+.card-thuvien{
+    width: calc(33.333% - 24px) ;
+
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 50px 1px rgba(233, 236, 240,1);
+
+}
+
+.card-thuvien .card-title{
+    width: 100%;
+    display: flex;
+    padding: 20px 20px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+}
+.card-title-duongke{
+    border-bottom: 1px solid rgb(242, 242, 245);
+    width: 100%;
+    display: flex;
+    padding-bottom: 14px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.icon-card{
+    width: 20%;
+    height: 60px;
+    margin-right: 10px;
+}
+.icon-card img{
+    width: 100%;
+    height: 100%;
+}
+.card-title-duongke .title{
+    width: 70%;
+    padding-right: 5px;
+}
+.card-title-duongke .title a{
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: -0.8px
+}
+.card-title_sods{
+   
+    min-width: 24px;
+    height: 24px;
+    background-color: #eaeaea;
+    border-radius: 50px;
+    font-size: 12px;
+    color: #707070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.card-thuvien ul{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.card-thuvien ul>li{
+   padding-top: 15px;
+   padding-bottom: 15px;
+}
+.card-thuvien ul>li>a{
+   text-decoration: none;
+   color:rgb(86, 110, 139);
+   font-size: 16px;
+   font-weight: 400;
+ }
+ .card-thuvien ul>li>i{
+    margin-right: 5px;
+  }
+
+.title-xemthem{
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
+.title-xemthem a{
+    text-decoration: none;
+    color: #528ffe;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* mobile: with < 740px  */
+@media only screen and (max-width: 740px) {
+    #cards-thuvien{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    } 
+
+    .card-thuvien{
+        width: 100%;
+    }
+
+}
+
+
+/* table: with < 1024px  */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+
+}

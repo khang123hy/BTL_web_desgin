@@ -1,0 +1,294 @@
+
+
+    #menu {
+        position: -webkit-sticky;
+        position: sticky;
+        width: 100%;
+        top: 0px;
+        height: 72px;
+        background-color: #ffffff;
+        box-shadow: 0px 5px 10px rgba(150, 150, 220, 0.2);
+        display: flex;
+        box-sizing: border-box;
+        z-index: 200;
+        padding-left: 7%;
+        padding-right: 7%;
+        overflow: hidden;
+      }
+      #menu ul {
+        margin-left: 15px;
+        float: left;
+        background-color: rgb(255, 255, 255);
+        list-style-type: none;
+        width: 60%;
+        height: 100%;
+      
+      }
+      .logoTL_MB{
+        display: none;
+      }
+      #menu > ul > li {
+        display: inline-block;
+        width: 12%;
+        min-width: 40px;
+        height: 100%;
+        font-size: 14px;
+        line-height: 72px;
+        position: relative;
+        text-align: center;
+        font-size: 16px; 
+      }
+      #menu > ul > li > ul li {
+        width: 200px;
+        line-height: 30px;
+        text-align: left;
+        padding-left: 10px;
+        position: relative;
+      }
+      #menu .submenu li:hover {
+        background-color: rgba(174, 182, 180, 0.778);
+        border-radius: 10px;
+        width: auto;
+      }
+      #menu:hover{
+        overflow: visible;
+      }
+      
+      
+      .submenu {
+        display: none;
+        position: absolute;
+        box-shadow: 0px 5px 10px rgba(2, 1, 1, 0.5);
+        
+      }
+      #menu .trangchu1 a {
+        color: #1e2132;
+        text-decoration: none;
+        
+        font-weight: 600;
+        letter-spacing: -0.24px
+      }
+      #menu .trangchu a {
+        color: #1464f4;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: -0.24px
+      }
+      #menu > ul > li:hover > .submenu {
+        display: block;
+        margin-top: -20px;
+      }
+      
+      #menu li:hover > .submenu {
+        display: block;
+        width: auto;
+        border-radius: 10px;
+        height: auto;
+      }
+      .logo {
+        width: 150px;
+          height: 72px;
+          display: flex;
+          align-items: center;
+         
+        }
+        
+      .timkiem-taikhoan {
+        display: flex;
+        height: 72px;
+        width: 28%;
+        justify-content: flex-end;
+      
+        align-items: center;
+      }
+      
+      .timkiem-taikhoan i {
+        margin-right: 10px;
+      }
+      
+      .btn-dangky {
+        background-color: rgb(20, 100, 244);
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        margin-left: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .btn-dangnhap {
+        background-color: #ffffff;
+        color: #050609;
+        border: none;
+        padding: 8px 16px;
+        margin-left: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .btn-dangky:hover {
+        background-color: rgb(30, 55, 238);
+      }
+      
+      .btn-dangnhap:hover {
+        color: #1464f4;
+      }
+      #menu .menu-mobile-btn{
+        float: right;
+        padding: 0 21px;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        display: none;
+      }
+      #menu .menu-mobile-btn:hover{
+        background-color: #999;
+        
+      }   
+
+      .timkiem-mobile-btn{
+        display: none;
+      }
+/* mobile: with < 740px  */
+@media only screen and (max-width: 740px) {
+
+
+     /* MENU */
+     #menu{
+        height: 60px;
+        /* display: inline-block; */
+        padding-right: 0;
+     }
+    #menu:hover{
+        overflow: hidden;
+    }
+      .timkiem-taikhoan{
+       display: none;
+      }
+      .logoTL_MB{
+        display:block;
+      }
+      .logoPC{
+        display:none;
+      }
+      .logo {
+        width: 20%;
+        height: 60px;
+      }
+     
+      #menu > ul > li{
+        width:100%;
+        display: flex;
+        line-height: 50px;
+      }
+      #menu > ul > li>a{
+        width:100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      #menu .menu-mobile-btn{
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .menu-mobile-btn i{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #menu .menu2{
+        display: none;
+        width: 100%;
+      }
+
+      .timkiem-mobile-btn{
+        
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .timkiem-mobile-btn i:hover{
+        background-color: #939292;
+      }
+      .timkiem-mobile-btn i{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      #menu > ul > li{
+        display: block;
+      }
+      #menu > ul > li:hover > .submenu{
+        margin-top: 0px;
+        
+      }
+      #menu li:hover > .submenu{
+        border-radius: 0px;
+        width: 100% ;
+
+      }
+      .submenu{
+        position: static;
+        box-shadow: none;
+        width: 100%;
+      }
+      #menu > ul > li > ul li{
+        width: 100%;
+      }
+      
+      
+}
+
+/* table: with < 1024px  */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+  /* MENU */
+  #menu{
+    padding: 0 0;
+    justify-content: space-between;
+  }
+  #menu ul {
+    display: none;
+  }
+  .timkiem-taikhoan{
+    width: 100%;
+  }
+  .Tapchi {
+    width: 90%;
+  }
+  .timkiem-mobile-btn{
+    display: none;
+    right: 0;
+  }
+  #menu .menu-mobile-btn {
+    float: right;
+   right: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-mobile-btn i{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu > ul > li{
+    width: 18%;
+  }
+}
+@media only screen and (max-width: 740px)  {
+   .menu2 {
+    display: block; 
+  }
+}
