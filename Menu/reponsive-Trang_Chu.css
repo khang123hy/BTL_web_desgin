@@ -321,8 +321,6 @@
   }
   #menu > ul > li.trangchu2{
     display: block;
-
-
   }
   #menu > ul > li.trangchu2 >hr{
     display: none;
@@ -335,6 +333,7 @@
   }
   img.duongkethang-dangnhap {
     display: block;
+    
 }
 }
 @media only screen and (max-width: 740px)  {
