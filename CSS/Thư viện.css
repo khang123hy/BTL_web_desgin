@@ -166,7 +166,10 @@
     font-size: 12px;
     font-weight: 300;
 }
-
+.menu-bar:hover{
+    cursor: pointer;
+    background-color: #c75454;
+}
 /* mobile: with < 740px  */
 @media only screen and (max-width: 740px) {
     main{
@@ -202,6 +205,10 @@
 
 /* table: with < 1024px  */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
-
-
+    main{
+        width: 98%;
+    }
+    .icon-timkiem{
+        width: 80%;
+    }
 }

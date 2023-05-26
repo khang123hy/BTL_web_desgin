@@ -27,15 +27,155 @@
         rel="stylesheet"
       />
       <!--END Dùng chung -->
+      <link rel="stylesheet" href="./CSS/Quản lý thông tin.css">
 </head>
 <body>
     
-    <div class="Navigation-bar">
-
+  <!-- START -------------------------------------------------------Navigation-bar -->
+    <div id="Navigation-bar">
+        <div class="logo">
+          <img src="./Hình ảnh/logo.png" alt="#" class="logo-bar">
+        </div>
+        <hr>
+        <div class="items">
+          <div class="item">
+            <img src="./Hình ảnh/user.png" alt="" class="icon-item">
+           <a href="#" class="item-title">Quản lý người dùng</a>
+          </div>
+          <div class="item">
+            <img src="./Hình ảnh/news1.png" alt="" class="icon-item">
+           <a href="#" class="item-title">Quản lý tin tức</a>
+          </div>
+          <div class="item">
+            <img src="./Hình ảnh/Forum.png" alt="" class="icon-item">
+           <a href="#" class="item-title">Quản lý diễn đàn</nav></a>
+          </div>
+          <div class="item">
+            <img src="./Hình ảnh/event.png" alt="" class="icon-item">
+           <a href="#" class="item-title">Quản lý sự kiện</a>
+          </div>
+          <div class="item">
+            <img src="./Hình ảnh/library.png" alt="" class="icon-item">
+           <a href="#" class="item-title">Quản lý thư viện</a>
+          </div>
+      
+        </div>
     </div>
-    <div class="maint-content">
+  <!-- END -------------------------------------------------------Navigation-bar -->
+
+
+
+  <!-- START -------------------------------------------------------maint-content -->
+
+    <div id="maint-content">
+      <!-- START---------------------header-maint -->
+        <div class="header-maint">
+          <div class="title-header">
+            <h1>TRANG QUẢN LÝ</h1>
+          </div>
+          <div class="control-header">
+            <div class="caidat-control_header"><a href="#"><img src="./Hình ảnh/setting.png" alt="cai dat"></a></div>
+
+            <div class="thongbap-control_header"><a href="#"><img src="./Hình ảnh/notification.png" alt="thông báo"></a></div>
+            <div class="user-control_header">
+              <a href="#"><img src="./Hình ảnh/congnghe-avt1.jpg" alt="thông báo"><i class="fa-solid fa-angle-down"></i> </a>
+            </div>
+            <div class="menu-bar"> <img width="35px" height="35px" src="./Hình ảnh/menu.png" alt="#"></div>
+
+          </div>
+        </div>
+      <!-- END---------------------header-maint -->
+
+      <!-- START---------------------contener-maint -->
+      <div class="contener-maint">
+        <div class="welcome-contener">
+          <div class="title-welcome">
+            <h1>Xin chào, Khang</h1>
+            <p>Chào mừng bạn đến với trang Quản Lý</p>
+          </div>
+
+          
+          <img class="image-welcome" src="./Hình ảnh/icons8_google_tag_manager_150px.png" alt="#">
+        </div>
+
+
+          <!-- --------------------------thoigian-contener -->
+        <div class="thoigians-contener">
+          <a href="#" class="thoigian1">Hôm nay</a>
+          <a href="#" class="thoigian">Tuần</a>
+          <a href="#" class="thoigian">Tháng</a>
+          <a href="#" class="thoigian">Năm</a>
+          <a href="#" class="thoigian">Tuỳ chỉnh</a>
+
+        </div>
+          <!--END --------------------------thoigian-contener -->
+          <!-- hoatdong--------------------------thoigian-contener -->
+        <div class="hoatdong-contener">
+
+
+          <a href="#" style="background-color: #3F6CE3;" class="card-hoatdong">
+            <div class="title-card">Người dùng hoạt động</div>
+            <div class="thongso-card">
+              <div class="number-card">1000</div>
+              <div class="kieu-card">Người</div>
+            </div>
+          </a>
+
+          <a href="#" style="background-color: #6A8DE9;" class="card-hoatdong">
+            <div class="title-card">Bài đăng</div>
+            <div class="thongso-card">
+              <div class="number-card">1000</div>
+              <div class="kieu-card">Bài</div>
+            </div>
+          </a>
+
+          <a href="#" style="background-color: #EB8E6D;" class="card-hoatdong">
+            <div class="title-card">Người dùng mới</div>
+            <div class="thongso-card">
+              <div class="number-card">1000</div>
+              <div class="kieu-card">Người</div>
+            </div>
+          </a>
+
+          <a href="#" style="background-color: #FF5B5C;" class="card-hoatdong">
+            <div class="title-card">Tổng người dùng</div>
+            <div class="thongso-card">
+              <div class="number-card">1000 
+          
+              </div>
+              <div class="kieu-card">Người</div>
+            </div>
+          </a>
+
+
         
+        </div>
+
+        <div class="time-thoitiet_contener">
+          <div class="day-time">
+            <div class="getday"></div>
+            <div class="gettime"> 
+              
+            </div>
+          </div>
+           
+         
+
+          <div class="icon-time">
+            <img src="./Hình ảnh/icons8_story_time_250px.png" alt="#">
+            <img class="image_iconday" src="./Hình ảnh/icons8_timeline_week_150px.png" alt="#">
+          </div>
+        </div>
+
+      </div>
+      <!-- END---------------------contener-maint -->
+
+    
+
     </div>
 
+  <!-- START -------------------------------------------------------maint-content -->
+  <script src="./JS/jquery-3.7.0.min.js"></script>
+<script src="./JS/Quản lý thông tin.js"></script>
 </body>
 </html>

@@ -195,8 +195,9 @@
      
       #menu > ul > li{
         width:100%;
-        display: flex;
+        display: block;
         line-height: 50px;
+        position: static;
       }
       #menu > ul > li>a{
         width:100%;
@@ -242,9 +243,7 @@
         align-items: center;
         justify-content: flex-end;
       }
-      #menu > ul > li{
-        display: block;
-      }
+
       #menu > ul > li:hover > .submenu{
         margin-top: 0px;
         
@@ -317,24 +316,10 @@
     align-items: center;
   }
   #menu > ul > li{
-    width: 18%;
+    width: 15%;
   }
-  #menu > ul > li.trangchu2{
-    display: block;
-  }
-  #menu > ul > li.trangchu2 >hr{
-    display: none;
-  }
-  #menu > ul > li.trangchu2 >a{
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #050609;
-  }
-  img.duongkethang-dangnhap {
-    display: block;
-    
-}
+
+
 }
 @media only screen and (max-width: 740px)  {
    .menu2 {

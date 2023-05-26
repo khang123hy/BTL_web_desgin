@@ -5,7 +5,377 @@
   body {
     color: black;
     font-family: "Mulish", sans-serif;
-    background-image: linear-gradient(rgb(255,255,255),rgb(254,254,254));
+   
+    display: flex;
+    background-color: #F2F2F2;
+
   }
 
 
+
+
+
+
+
+
+/* START-----------------------------------------------------------------#maint-content */
+  #maint-content{
+    width: 85%;
+    background-color: #F2F2F2;
+    /* height: 2000px; */
+    margin-left: 15%;
+
+  }
+
+  /* -------------------header */
+    .header-maint{
+      width: calc(100% - 15%);
+      display: flex;
+      background-color: #fff;
+      position: fixed;
+      justify-content: space-between;
+      height: 55px;
+      align-items: center;
+      padding: 0px 40px;
+      box-sizing: border-box;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .title-header h1{
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      color: rgba(76, 76, 76,0.8);
+      font-weight: 700;
+
+    }
+    .control-header{
+      display: flex;
+      height: 100%; 
+   
+    }
+    .control-header a{
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .caidat-control_header img,.thongbap-control_header img{
+      width: 25px;
+      height: 25px;
+    }
+    .user-control_header img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      margin-right: 5px;
+    }
+    .caidat-control_header,.thongbap-control_header,.user-control_header{
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+    }
+  /* END-------------------header */
+  
+  /* -------------------------------------CONTENER-MAINT */
+  .contener-maint{
+    width: 92%;
+    margin: 0 auto;
+    padding-top: 55px;
+  }
+  .welcome-contener{
+    width: 100%;
+    background-image: linear-gradient(to right, #3F6CE3, #87A3ED);
+    max-height: 130px;
+    margin-top: 40px;
+    border-radius: 20px;
+    display: flex;
+   align-items: center;
+    justify-content: space-between;
+    padding: 30px 30px;
+    color: #fff;
+  }
+
+  .title-welcome{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .welcome-contener h1{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .welcome-contener p{
+    font-size: 15px;
+    font-weight: 500;
+    margin-top:15px ;
+  
+  }
+
+  .image-welcome{
+    width: 150px;
+  }
+
+  .thoigians-contener{
+    flex-wrap: wrap;
+    margin-top: 35px;
+    line-height: 40px;
+  }
+
+  .thoigians-contener a{
+    background-color: rgb(223, 227, 244);
+    padding: 5px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #4B75E5;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  .thoigians-contener .thoigian1{
+    color: #ffffff;
+    background-color: #3F6CE3;
+  }
+  /* END-------------------------------------CONTENER-MAINT */
+
+  /* -------------------------------------------------------hoatdong-contener */
+    .hoatdong-contener{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 35px;
+      margin-left: -30px;
+    }
+    .hoatdong-contener a{
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .card-hoatdong{
+      width: calc(25% - 30px);
+      margin-left: 30px;
+      border-radius: 30px;
+      padding: 20px;
+    }
+    .title-card{
+      font-weight: 500;
+
+      font-size: 20px;
+    }
+    .thongso-card{
+      display: flex;
+      align-items: flex-end;
+      margin-top: 15px;
+    }
+    .number-card{
+      font-size: 28px;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+    .kieu-card
+    {
+      font-size: 13px;
+      
+    }
+    .card-hoatdong:hover{
+      box-shadow: 0 0 10px #807f7f;
+    }
+  /* END-------------------------------------------------------hoatdong-contener */
+    .time-thoitiet_contener
+    {
+      width: 100%;
+      height: 150px;
+      background-color: #6A8DE9;
+      border-radius: 20px;
+      margin-top: 35px;
+      margin-bottom: 35px;
+      display: flex;
+      padding: 30px 30px;
+      color: white;
+     overflow: hidden;
+      align-items: center;
+      justify-content: space-between;
+
+    }
+    .day-time{
+      display: flex;
+
+     
+      
+      flex-direction: column;
+    }
+    .gettime{
+      font-size:60px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      margin-left: 100px;
+    }
+    .getday{
+      letter-spacing: 2px;
+
+      padding-bottom: 7px;
+      margin-left: 20px;
+
+      font-size: 40px;
+      font-weight: 700;
+
+    }
+    .image_iconday{
+      margin-left: -90px;
+      padding-right: 30px;
+    }
+    .icon-time{
+      display: flex;
+      align-items: center;
+    }
+
+  /* -------------------------------------------------------TIME-THOITIET */
+
+
+  /*END -------------------------------------------------------TIME-THOITIET */
+    
+
+
+/* END-----------------------------------------------------------------#maint-content */
+
+
+
+
+
+/* START-----------------------------------------------------------------Navigation-bar */
+#Navigation-bar{
+    width: 15%;
+    background-color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   position: fixed;
+   
+  transition: 1s cubic-bezier(1, -0.85, 0.25, 1) 0s;
+  z-index: 1;
+  overflow: hidden;
+
+
+}
+
+.logo-bar{
+  width: 180px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+#Navigation-bar hr{
+  width: 90%;
+  margin: 0px;
+}
+.items{
+  width: 100%;
+
+}
+
+.item{
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 20px;
+}
+.item:hover{
+  background-color: #d5d2d2;
+}
+.icon-item{ 
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+
+}
+.item-title{
+  text-decoration: none;
+  color: rgb(76, 76, 76);
+  font-weight: 700;
+  font-size: 16px;
+}
+.menu-bar{
+  height: 100%;
+  display: none;
+  align-items: center;
+  
+}
+
+
+/* END-----------------------------------------------------------------Navigation-bar */
+
+
+
+/* mobile: with < 740px  */
+@media only screen and (max-width: 740px) {
+  #Navigation-bar{
+    width: 0px;
+    margin-top: 55px;
+
+  }
+
+  #maint-content{
+    width: 100%;
+    margin-left: 0%;
+    padding: 0px;
+  }
+  .header-maint{
+    padding: 0px;
+    width: 100%;
+    padding-left: 10px;
+  }
+  .thongbap-control_header,.caidat-control_header{
+    display: none;
+  }
+  .welcome-contener img{
+    width: 80px;
+
+  }
+  .menu-bar{
+    display: flex;
+    align-items: center;
+    width: 50px;
+  }
+  .menu-bar:hover{
+    cursor: pointer;
+  }
+  .hoatdong-contener{
+    margin: 0px;
+  }
+  .card-hoatdong{
+    width: 100%;
+    margin: 10px;
+  }
+  .getday{
+    font-size: 30px;
+  }
+  .gettime{
+    font-size: 40px;
+    margin-left: 28px;
+  }
+  .control-header{
+    margin: 0px;
+  }
+}
+
+
+/* table: with < 1024px  */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+
+  #maint-content{
+    width: 72%;
+    margin-left:28%;
+
+  }
+#Navigation-bar{
+  width: 28%;
+}
+.card-hoatdong{
+  width: calc(50% - 30px);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.control-header{
+  margin-right: 15%;
+}
+}
