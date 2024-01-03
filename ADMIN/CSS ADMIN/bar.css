@@ -1,0 +1,64 @@
+
+/* START-----------------------------------------------------------------Navigation-bar */
+#Navigation-bar{
+    width: 15%;
+    background-color: #ffffff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   position: fixed;
+   
+  transition: 1s cubic-bezier(1, -0.85, 0.25, 1) 0s;
+  z-index: 1;
+  overflow: hidden;
+
+
+}
+
+.logo-bar{
+  width: 180px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+#Navigation-bar hr{
+  width: 90%;
+  margin: 0px;
+}
+.items{
+  width: 100%;
+
+}
+
+.item{
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 20px;
+}
+.item:hover{
+  background-color: #d5d2d2;
+}
+.icon-item{ 
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+
+}
+.item-title{
+  text-decoration: none;
+  color: rgb(76, 76, 76);
+  font-weight: 700;
+  font-size: 16px;
+}
+.menu-bar{
+  height: 100%;
+  display: none;
+  align-items: center;
+  
+}
+
+
+/* END-----------------------------------------------------------------Navigation-bar */

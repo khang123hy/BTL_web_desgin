@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     position: 0px;
+    margin: 0;
   }
   body {
     color: black;
@@ -24,7 +25,6 @@
     background-color: #F2F2F2;
     /* height: 2000px; */
     margin-left: 15%;
-
   }
 
   /* -------------------header */
@@ -73,6 +73,9 @@
       align-items: center;
       padding: 0px 10px;
     }
+    .id_nguoidung{
+      display: none;
+    }
   /* END-------------------header */
   
   /* -------------------------------------CONTENER-MAINT */
@@ -93,7 +96,9 @@
     padding: 30px 30px;
     color: #fff;
   }
-
+  .image-welcome{
+    width: 150px;
+  }
   .title-welcome{
     display: flex;
     justify-content: center;
@@ -112,9 +117,7 @@
   
   }
 
-  .image-welcome{
-    width: 150px;
-  }
+ 
 
   .thoigians-contener{
     flex-wrap: wrap;
@@ -203,21 +206,12 @@
       flex-direction: column;
     }
     .gettime{
-      font-size:60px;
+      font-size:70px;
       font-weight: 700;
       letter-spacing: 5px;
-      margin-left: 100px;
+      margin-left: 50px;
     }
-    .getday{
-      letter-spacing: 2px;
-
-      padding-bottom: 7px;
-      margin-left: 20px;
-
-      font-size: 40px;
-      font-weight: 700;
-
-    }
+ 
     .image_iconday{
       margin-left: -90px;
       padding-right: 30px;
@@ -253,7 +247,7 @@
   transition: 1s cubic-bezier(1, -0.85, 0.25, 1) 0s;
   z-index: 1;
   overflow: hidden;
-
+  
 
 }
 
@@ -355,6 +349,7 @@
   }
   .control-header{
     margin: 0px;
+
   }
 }
 
@@ -365,7 +360,6 @@
   #maint-content{
     width: 72%;
     margin-left:28%;
-
   }
 #Navigation-bar{
   width: 28%;

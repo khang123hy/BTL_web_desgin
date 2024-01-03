@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <!--START Dùng chung -->
+
+          <link rel="icon" href="../Hình ảnh/logo4.png" type="image/png" />
+          <title>Quản lý bài viết - Cộng đồng VinFast Toàn cầu</title>
+         
+          <link rel="stylesheet" href="../User/CSS/reset.css" />
+      
+          <link
+            rel="stylesheet"
+            href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css"
+          />
+        
+          <link
+            rel="stylesheet"
+            href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"
+          />
+          
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+            rel="stylesheet"
+          />
+          <!--END Dùng chung -->
+          <link rel="stylesheet" href="./CSS ADMIN/bar.css">
+          <link rel="stylesheet" href="./CSS ADMIN/Quản lý thông tin.css">
+          <link rel="stylesheet" href="./CSS ADMIN/Quản lý người dùng.css">
+</head>
+<body>
+      <!-- START -------------------------------------------------------Navigation-bar -->
+      <div id="Navigation-bar">
+        <div class="logo">
+          <img src="../Hình ảnh/logo.png" alt="#" class="logo-bar">
+        </div>
+        <hr>
+        <div class="items">
+          <div class="item">
+           
+           <a href="./Quản lý thông tin.html" class="item-title">Trang Chủ</a>
+          </div>
+          <div class="item">
+            <img src="../Hình ảnh/user.png" alt="" class="icon-item">
+           <a href="#" class="item-title">Quản lý tài khoản</a>
+          </div>
+          <div class="item">
+            <img src="../Hình ảnh/news1.png" alt="" class="icon-item">
+           <a href="./Quản lý người dùng.html" class="item-title">Quản lý người dùng</a>
+          </div>
+          <div class="item">
+            <img src="../Hình ảnh/Forum.png" alt="" class="icon-item">
+           <a href="./Quản lý bài viết.html" class="item-title">Quản lý bài viết</nav></a>
+          </div>
+          <div class="item">
+            <img src="../Hình ảnh/event.png" alt="" class="icon-item">
+           <a href="#" class="item-title">Quản lý comment</a>
+          </div>
+        </div>
+    </div>
+  <!-- END -------------------------------------------------------Navigation-bar -->
+
+
+  <div id="maint-content">
+    <!-- START---------------------header-maint -->
+      <div class="header-maint">
+        <div class="title-header">
+          <h1>TRANG QUẢN LÝ BÀI VIẾT</h1>
+        </div>
+        <div class="control-header">
+          <div class="caidat-control_header"><a href="#"><img src="../Hình ảnh/setting.png" alt="cai dat"></a></div>
+
+          <div class="thongbap-control_header"><a href="#"><img src="../Hình ảnh/notification.png" alt="thông báo"></a></div>
+          <div class="user-control_header">
+            <a href="#"><img src="../Hình ảnh/congnghe-avt1.jpg" alt="thông báo"><i class="fa-solid fa-angle-down"></i> </a>
+          </div>
+          <div class="id_nguoidung">6</div>
+          <div class="menu-bar"> <img width="35px" height="35px" src="../Hình ảnh/menu.png" alt="#"></div>
+        </div>
+      </div>
+    <!-- END---------------------header-maint -->
+
+    <!-- START-------------------CONTROL-EDIT -->
+    <div class="id_nguoidung">6</div>
+    <div class="control_edit ">
+        <div class="edits">
+          <div class="tieudevaload_edit">
+            <div class="tieude_tieudevaload">
+              Trang điền thông tin
+          
+            </div>
+     
+            <button id="id_load_baiviet" class="id_load" >
+              <img src="../Hình ảnh/icons8_refresh_1.svg" alt="" width="100%" height="100%">
+            </button>
+              
+          
+           </div>
+        
+            <div class="edit_chung edt_chung_baiviet">
+              <div class="edit_body-inputvaten"  style="width: 70%;">
+                <div class="teninput">Mã bài viết</div>
+                <input id="edt_idbaiviet" type="text" name="tendangnhap" placeholder="Mã tự động nhée!"  style="width: 100%; " readonly>
+              </div>
+            </div>
+
+            <div class="edit_chung edt_chung_baiviet">
+              <div class="edit_body-inputvaten"  style="width: 70%;">
+                <div class="teninput">Mã chủ đề</div>
+                <input id="edt_machude" type="email" name="email" placeholder="Vui lòng nhập mã chủ đề!"style="width: 100%;" >
+              </div>
+            </div>
+            <div class="edit_chung edt_chung_baiviet">
+              <div class="edit_body-inputvaten"  style="width: 70%;">
+                <div class="teninput">Tiêu đề</div>
+                <input id="edt_tieude" type="text" name="hoten" placeholder="Vui lòng nhập tiêu đề!" style="width: 100%;">
+              </div>
+            </div>
+          
+            <div class="edit_chung2">
+              <div class="edit_body-inputvaten"  style="width: 85%;">
+                <div class="teninput">Nội dung</div>
+                <textarea style="width: 100%;" id="edt_noidung" rows="2" oninput="autoExpand(this)"
+                  placeholder="Điền nội dung bình bài viết"></textarea>
+              </div>
+          </div>
+          <div class="hinhanh_quanly">Hình ảnh: 
+            <input type="file" id="input_hinhanh" name="hinhanh" accept="image/*">
+        </div>    
+        </div>
+        <div class="controls">
+            <input id="btn_luu_baiviet" type="button" value="Lưu">
+        </div>
+    </div>
+    <div class="container-hienthi">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Mã bài viết</th>
+            <th>Mã người dùng</th>
+            <th>Mã chủ đề</th>
+            <th>Tiêu đề</th>
+            <th>Nội dung bài viết</th>
+            <th>Hình ảnh</th>
+            <th>Thời gian</th>
+            <th>Sửa</th>
+            <th>Xoá</th>
+          </tr>
+        </thead>
+        <tbody id="tbody_baiviet">
+          <tr id="dongdulieudovao">
+            <td width="3%" id="tv_stt_nguoidung">1</td>
+            <td width="7%" id="tv_mabaiviet_nguoidung">123</td>
+            <td width="7%" id="tv_manguoidung_nguoidung">1</td>
+            <td width="7%" id="tv_machude_nguoidung">2</td>
+            <td width="15%" id="tv_tieude_nguoidung">Vip nhất pro</td>
+            <td width="28%" id="tv_noidungbaiviet_nguoidung">Anh yêu em nhất trên đời</td>
+            <td width="10%" id="tv_hinhanh_nguoidung"><img id="Img_baiviet" width="30px" height="30px" src="../Hình ảnh/congnghe-avt1.jpg" alt=""></td>
+            <td width="10%" id="tv_gettime_nguoidung" >18/10/2023 lúc 12:12</td>
+            <td width="3%">
+              <button id="btn_sua" style="width: 100%; height:100%;">
+                <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                  <path d="M24 6C22.807559 6 21.664511 6.1635449 20.582031 6.4355469 A 1.50015 1.50015 0 0 0 19.466797 7.6484375L19.236328 9.0546875C19.151818 9.5709093 18.841961 10.019613 18.388672 10.28125C17.934652 10.543309 17.392892 10.587247 16.904297 10.402344 A 1.50015 1.50015 0 0 0 16.902344 10.402344L15.564453 9.8964844 A 1.50015 1.50015 0 0 0 13.958984 10.255859C12.368407 11.894602 11.181435 13.920591 10.541016 16.177734 A 1.50015 1.50015 0 0 0 11.033203 17.748047L12.138672 18.652344C12.544167 18.984505 12.777344 19.47656 12.777344 20C12.777344 20.52344 12.544468 21.017386 12.140625 21.347656L11.033203 22.251953 A 1.50015 1.50015 0 0 0 10.541016 23.822266C11.181561 26.079851 12.369901 28.105783 13.958984 29.744141 A 1.50015 1.50015 0 0 0 15.566406 30.103516L16.902344 29.597656C17.390599 29.412882 17.934797 29.455639 18.386719 29.716797C18.839645 29.978536 19.15198 30.430093 19.236328 30.945312L19.464844 32.349609 A 1.50015 1.50015 0 0 0 20.580078 33.5625C21.66412 33.835723 22.807559 34 24 34C25.192441 34 26.335489 33.836455 27.417969 33.564453 A 1.50015 1.50015 0 0 0 28.533203 32.351562L28.763672 30.945312C28.848182 30.429091 29.158039 29.980387 29.611328 29.71875C30.065348 29.456691 30.607108 29.412753 31.095703 29.597656L32.433594 30.103516 A 1.50015 1.50015 0 0 0 34.041016 29.746094C35.631593 28.107351 36.818565 26.081362 37.458984 23.824219 A 1.50015 1.50015 0 0 0 36.964844 22.253906L35.859375 21.347656C35.45388 21.015495 35.220703 20.525393 35.220703 20.001953C35.220703 19.478513 35.455532 18.984567 35.859375 18.654297L36.966797 17.748047 A 1.50015 1.50015 0 0 0 37.458984 16.177734C36.817491 13.916807 35.621502 11.893639 34.037109 10.257812 A 1.50015 1.50015 0 0 0 32.429688 9.8984375L31.097656 10.402344C30.609401 10.587118 30.065203 10.544361 29.613281 10.283203 A 1.50015 1.50015 0 0 0 29.611328 10.28125C29.158528 10.019895 28.848577 9.5721598 28.763672 9.0566406L28.763672 9.0546875L28.533203 7.6367188 A 1.50015 1.50015 0 0 0 27.419922 6.4238281C26.32463 6.1472053 25.178356 6 24 6 z M 24 9C24.604451 9 25.173326 9.1223523 25.75 9.2167969L25.802734 9.5390625 A 1.50015 1.50015 0 0 0 25.802734 9.5410156C26.032223 10.942794 26.880617 12.170497 28.111328 12.880859L28.111328 12.878906C29.341407 13.589748 30.828458 13.71221 32.158203 13.208984L32.453125 13.097656C33.194187 14.004968 33.781763 15.019251 34.205078 16.130859L33.958984 16.332031C32.858827 17.231761 32.220703 18.581393 32.220703 20.001953C32.220703 21.422513 32.86048 22.770083 33.958984 23.669922L34.205078 23.871094C33.782393 24.984601 33.19511 26.000027 32.455078 26.90625L32.158203 26.792969C30.828799 26.289872 29.341308 26.411153 28.111328 27.121094C26.880617 27.831457 26.032223 29.059158 25.802734 30.460938L25.751953 30.775391C25.172346 30.873589 24.598115 31 24 31C23.401885 31 22.827635 30.873742 22.248047 30.775391L22.197266 30.458984C21.967613 29.056204 21.117745 27.831355 19.888672 27.121094C18.658593 26.410252 17.171542 26.28779 15.841797 26.791016L15.542969 26.904297C14.803146 25.997801 14.21758 24.982513 13.794922 23.869141L14.039062 23.667969C15.138473 22.76824 15.777344 21.420035 15.777344 20C15.777344 18.57944 15.13952 17.23187 14.041016 16.332031 A 1.50015 1.50015 0 0 0 14.039062 16.332031L13.794922 16.130859C14.21746 15.017378 14.803109 14.001955 15.542969 13.095703L15.841797 13.207031C17.171201 13.710128 18.658692 13.588847 19.888672 12.878906C21.119383 12.168543 21.967777 10.940841 22.197266 9.5390625L22.248047 9.2246094C22.827704 9.1264608 23.401885 9 24 9 z M 23.976562 13.978516 A 1.50015 1.50015 0 0 0 22.5 15.5L22.5 20.878906L21.060547 19.439453 A 1.50015 1.50015 0 1 0 18.939453 21.560547L22.939453 25.560547 A 1.50015 1.50015 0 0 0 25.060547 25.560547L29.060547 21.560547 A 1.50015 1.50015 0 1 0 26.939453 19.439453L25.5 20.878906L25.5 15.5 A 1.50015 1.50015 0 0 0 23.976562 13.978516 z M 7.4765625 31.978516 A 1.50015 1.50015 0 0 0 6 33.5L6 36.5C6 39.519774 8.4802259 42 11.5 42L36.5 42C39.519774 42 42 39.519774 42 36.5L42 33.5 A 1.50015 1.50015 0 1 0 39 33.5L39 36.5C39 37.898226 37.898226 39 36.5 39L11.5 39C10.101774 39 9 37.898226 9 36.5L9 33.5 A 1.50015 1.50015 0 0 0 7.4765625 31.978516 z" fill="#31406F" />
+                </svg>
+              </button>
+            </td>
+            <td width="3%">
+              <button id="btnxoa" style="width: 100%; height:100%;">
+                <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M10.806641 2C10.289641 2 9.7956875 2.2043125 9.4296875 2.5703125L9 3L4 3 A 1.0001 1.0001 0 1 0 4 5L20 5 A 1.0001 1.0001 0 1 0 20 3L15 3L14.570312 2.5703125C14.205312 2.2043125 13.710359 2 13.193359 2L10.806641 2 z M 4.3652344 7L5.8925781 20.263672C6.0245781 21.253672 6.877 22 7.875 22L16.123047 22C17.121047 22 17.974422 21.254859 18.107422 20.255859L19.634766 7L4.3652344 7 z" fill="#31406F" />
+                </svg>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+    <!-- END-------------------CONTROL-EDIT -->
+  </div>
+
+</body>
+
+<script src="../User/JS/jquery-3.7.0.min.js"></script>
+<script src="./JS/bar.js"></script>
+<script src="./JS/QuanLyBaiViet.js"></script>
+</html>
