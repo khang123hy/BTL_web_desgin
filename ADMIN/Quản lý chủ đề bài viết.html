@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--START Dùng chung -->
+
+  <link rel="icon" href="../Hình ảnh/logo4.png" type="image/png" />
+  <title>Quản lý chủ đề - Cộng đồng VinFast Toàn cầu</title>
+
+  <link rel="stylesheet" href="../User/CSS/reset.css" />
+
+  <link rel="stylesheet" href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css" />
+  <link rel="stylesheet" href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+    rel="stylesheet" />
+  <!--END Dùng chung -->
+  <link rel="stylesheet" href="./CSS ADMIN/bar.css">
+  <link rel="stylesheet" href="./CSS ADMIN/Quản lý thông tin.css">
+  <link rel="stylesheet" href="./CSS ADMIN/Quản lý người dùng.css">
+
+  <script src="./JS/bar.js"></script>
+  <script src="../angular.min.js"></script>
+  <script src="./JS/quanlyChuDe.js"></script>
+</head>
+
+<body ng-app="AppDienDan" ng-controller="ChuDeCtr">
+  <!-- START -------------------------------------------------------Navigation-bar -->
+  <div id="Navigation-bar">
+    <div class="logo">
+      <img src="../Hình ảnh/logo.png" alt="#" class="logo-bar">
+    </div>
+    <hr>
+    <div class="items">
+      <div class="item">
+
+        <a href="./Quản lý thông tin.html" class="item-title">Trang Chủ</a>
+      </div>
+      <div class="item">
+        <img src="../Hình ảnh/user.png" alt="" class="icon-item">
+        <a href="./Quản lý người dùng.html" class="item-title">Quản lý người dùng</a>
+      </div>
+      <div class="item">
+        <img src="../Hình ảnh/news1.png" alt="" class="icon-item">
+        <a href="./Quản lý chủ đề bài viết.html" class="item-title">Quản lý chủ đề</a>
+      </div>
+      <div class="item">
+        <img src="../Hình ảnh/Forum.png" alt="" class="icon-item">
+        <a href="./Quản lý bài viết.html" class="item-title">Quản lý bài viết</nav></a>
+      </div>
+      <div class="item">
+        <img src="../Hình ảnh/event.png" alt="" class="icon-item">
+        <a href="#" class="item-title">Quản lý bình luận</a>
+      </div>
+    </div>
+  </div>
+  <!-- END -------------------------------------------------------Navigation-bar -->
+
+
+
+  <!-- START -------------------------------------------------------maint-content -->
+
+  <div id="maint-content">
+    <!-- START---------------------header-maint -->
+    <div class="header-maint">
+      <div class="title-header">
+        <h1 id="id_title_header">TRANG QUẢN LÝ CHỦ ĐỀ</h1>
+        <button id="btn_tiemkiem_header"> <img src="../Hình ảnh/icon_btn_timkiem.svg" alt=""></button>
+        <div id="khung_inp_timkiem">
+          <img src="../Hình ảnh/icon_btn_timkiem.svg" alt="#">
+          <input type="text" id="inp_timkiem_header" placeholder="Tìm kiếm thông tin chủ đề..."
+            ng-keyup="handleKeyUp($event)">
+        </div>
+        <button id="btn_thoat_timkiem_header"> <img src="../Hình ảnh/icon_btn_close.svg" alt=""> </button>
+
+      </div>
+      <div class="control-header" id="avt_user">
+        <div class="caidat-control_header"><a href="#"><img src="../Hình ảnh/setting.png" alt="cai dat"></a></div>
+
+        <div class="thongbap-control_header"><a href="#"><img src="../Hình ảnh/notification.png" alt="thông báo"></a>
+        </div>
+        <div class="ctl_user_header">
+          <div onclick="hienthichucnanguser()" id="user-control_header">
+            <a href="#"><img id="avt_user_menu" src="" alt="thông báo"><i class="fa-solid fa-angle-down"></i>
+            </a>
+          </div>
+
+          <div id="khung_ctl_user_header">
+            <button id="btn_dangxuat"
+              onclick="localStorage.setItem('user_doan',null);window.location.href ='./Đăng nhập.html' ">Đăng xuất</button>
+          </div>
+
+        </div>
+        
+        <div class="menu-bar"> <img width="35px" height="35px" src="../Hình ảnh/menu.png" alt="#"></div>
+      </div>
+    </div>
+    <!-- END---------------------header-maint -->
+
+    <!-- START-------------------CONTROL-EDIT -->
+    <div class="control_edit ">
+      <div class="edits">
+        <div class="tieudevaload_edit">
+          <div class="tieude_tieudevaload">
+            Trang điền thông tin
+          </div>
+
+          <button class="id_load" ng-click="refresh()" id="id_load_nguoidung">
+            <img src="../Hình ảnh/icons8_refresh_2.svg" alt="" width="100%" height="100%">
+          </button>
+
+
+        </div>
+        <div class="edit_tendangnhap edit_chung" style="width: 100%;">
+          <div class="edit_body-inputvaten">
+            <div class="teninput">Tiêu đề</div>
+            <input id="edt_tieude" type="text" name="tieude" placeholder="Vui lòng nhập tiêu đề...">
+          </div>
+        </div>
+
+        <div class="edit_matkhau edit_chung" style="width: 100%;">
+          <div class="edit_body-inputvaten">
+
+            <div class="teninput">Miêu tả</div>
+            <textarea style="width: 100%;" id="inp_mieuta" class="edt_noidung" rows="3" oninput="autoExpand(this)"
+              placeholder="Điền miêu tả chủ đề..."></textarea>
+          </div>
+        </div>
+        <div class="hinhanh_quanly " style="width: 80%;">
+          Hình ảnh:
+          <input type="file" id="input_hinhanh_chude" name="hinhanh">
+
+        </div>
+
+      </div>
+      <div class="controls">
+        <input id="btn_luu" ng-click="luu()" type="button" value="Lưu">
+
+      </div>
+    </div>
+    <!-- END-------------------CONTROL-EDIT -->
+    <div class="container-hienthi">
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Mã chủ đề</th>
+            <th>Tiêu đề</th>
+            <th>Nội dung</th>
+            <th>Ảnh</th>
+            <th>Thời gian đăng</th>
+            <th>Sửa</th>
+            <th>Xoá</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="T in listTopics track by T.iD_Topic ">
+              <td style="width: 30px;">{{listTopics.length - $index}}</td>
+              <td>{{T.iD_Topic}}</td>
+              <td>{{T.title}}</td>
+              <td>{{T.description}}</td>
+              <td><img src="{{T.image}}" alt="Hi" width="70px" height="60px"></td>
+              <td>{{T.createdDate}}</td>
+              <td>
+                  <button id="btn_sua" onclick="Sua(this)" style="width: 100%; height:100%;">
+                      <img src="../Hình ảnh/icon_btn_sua.svg" alt="">
+                  </button>
+              </td>
+              <td>
+                  <button id="btn_sua" ng-click="btn_Xoa(T.iD_Topic)" style="width: 100%; height: 100%;">
+                      <img src="../Hình ảnh/icon_btn_xoa.svg" alt="">
+                  </button>
+              </td>
+          </tr>
+      </tbody>
+      
+      </table>
+
+      <div class="box-sum">
+        <div class="box-all">
+          <button ng-click="changePage('prev')"><i class="fas fa-angle-left"></i></button>
+          <button ng-click="changePage(1)" ng-class="{ 'active-page': currentPage === 1 }">1</button>
+          <button ng-click="changePage(2)" ng-class="{ 'active-page': currentPage === 2 }">2</button>
+          <button ng-click="changePage(3)" ng-class="{ 'active-page': currentPage === 3 }">3</button>
+          <button ng-click="changePage(4)" ng-class="{ 'active-page': currentPage === 4 }">4</button>
+          <button ng-if="page >= 5" ng-click="changePage(page)" ng-class="{ 'active-page': currentPage === page }">{{
+            page }}</button>
+          <button ng-click="changePage('next')"><i class="fas fa-angle-right"></i></button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>

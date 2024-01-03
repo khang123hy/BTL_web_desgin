@@ -38,7 +38,6 @@
       align-items: center;
       padding: 0px 40px;
       box-sizing: border-box;
-      overflow: hidden;
       z-index: 2;
     }
     .title-header h1{
@@ -48,10 +47,64 @@
       font-weight: 700;
 
     }
+    .title-header{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-right: 1px #807f7fae solid ;
+    }
+    #btn_tiemkiem_header,#btn_thoat_timkiem_header{
+      padding: 5px;
+      border-radius: 5px;
+      border: 0px;
+      background-color: #fff;
+      margin-right: 10px;
+    }
+    #inp_timkiem_header{
+      width: 100%;
+      border: 0.5px solid #807f7f94;
+      height: 40px;
+      border-radius: 20px;
+      padding-left: 40px;
+      padding-right: 20px;
+      font-size: 17px;
+      color: #565555cd;
+      display: none;
+
+    }
+
+    #inp_timkiem_header:focus{
+      outline: none;
+      border: 0.3px solid #807f7f5e;
+      box-shadow: 0px 0px 10px #afaeae;
+
+    }
+    #btn_thoat_timkiem_header{
+      margin-right: 30px;
+      padding-bottom: 0;
+      display: none;
+    }
+    #btn_tiemkiem_header:hover,#btn_thoat_timkiem_header:hover{
+      background-color: rgba(190, 190, 190, 0.471);
+
+    }
+    #khung_inp_timkiem{
+      position: relative;
+      display: none;
+      width: 93%;
+      
+    }
+    #khung_inp_timkiem img{
+      height:  20px;
+      width: 20px;
+      position: absolute;
+      top: 10px;
+      left:  14px;
+    }
     .control-header{
       display: flex;
       height: 100%; 
-   
     }
     .control-header a{
       text-decoration: none;
@@ -62,27 +115,55 @@
       width: 25px;
       height: 25px;
     }
-    .user-control_header img{
+    #user-control_header img{
       width: 40px;
       height: 40px;
       border-radius: 50px;
       margin-right: 5px;
+      border: 0.3px solid #807f7fa4;
     }
-    .caidat-control_header,.thongbap-control_header,.user-control_header{
+    .caidat-control_header,.thongbap-control_header,#user-control_header{
       display: flex;
       align-items: center;
       padding: 0px 10px;
     }
-    .id_nguoidung{
-      display: none;
+    #user-control_header{
+      height: 100%;
     }
+  .ctl_user_header {
+    position: relative;
+  }
+#khung_ctl_user_header{
+  border-radius: 5px ;
+  width: 150px;
+  left: -71px;
+  position: absolute;
+  z-index: 3;
+  background-color: #b35d5d;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 0 5px #807f7f;
+  overflow: hidden;
+}
+#khung_ctl_user_header button{
+border: 0;
+height: 25px;
+background-color: #fff;
+font-size: 13px;
+}
+#khung_ctl_user_header button:hover{
+  background-color: #c7c5c5;
+  } 
   /* END-------------------header */
   
   /* -------------------------------------CONTENER-MAINT */
   .contener-maint{
-    width: 92%;
+    width: 95%;
     margin: 0 auto;
     padding-top: 55px;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 20px;
   }
   .welcome-contener{
     width: 100%;
@@ -96,9 +177,7 @@
     padding: 30px 30px;
     color: #fff;
   }
-  .image-welcome{
-    width: 150px;
-  }
+
   .title-welcome{
     display: flex;
     justify-content: center;
@@ -117,7 +196,9 @@
   
   }
 
- 
+  .image-welcome{
+    width: 150px;
+  }
 
   .thoigians-contener{
     flex-wrap: wrap;
@@ -137,6 +218,16 @@
   .thoigians-contener .thoigian1{
     color: #ffffff;
     background-color: #3F6CE3;
+  }
+  .inp_nam_thongke_index{
+    background-color: rgb(223, 227, 244);
+    padding: 6px 13px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #4B75E5;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0px;
   }
   /* END-------------------------------------CONTENER-MAINT */
 
@@ -221,13 +312,26 @@
       align-items: center;
     }
 
-  /* -------------------------------------------------------TIME-THOITIET */
+  /* -------------------------------------------------------Biểu đồ */
+  .khung_bieudo{
+    background-color: #fff;
+    border-radius: 20px;
+    height: 560px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    box-shadow: 0 0 5px #b9b9b961;
+  }
+  .khung_bieudo:hover{
+    box-shadow: 0 0 30px #b9b9b9cf;
+  }
 
-
-  /*END -------------------------------------------------------TIME-THOITIET */
+  /*END -------------------------------------------------------Biểu đồ */
     
 
-
+    
 /* END-----------------------------------------------------------------#maint-content */
 
 

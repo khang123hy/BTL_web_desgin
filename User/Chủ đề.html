@@ -16,7 +16,7 @@
       />
       <link
         rel="stylesheet"
-        href="fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"
+        href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"
       />
       
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,12 +29,16 @@
       <link rel="stylesheet" href="./CSS/index.css">
       <link rel="stylesheet" href="./CSS/Chủ đề chăm xe - chơi xe.css">
 
+      <script src="../angular.min.js">  </script>
+      <script src="./JS/Chủ đề.js"></script>
+      <script src="../Menu/Menu.js">  </script>
+      <script src="../ADMIN/JS/bar.js">  </script>
 </head>
 
-<body>
+<body ng-app="AppDienDan" ng-controller="User_ChuDe" >
 
-   <!-- START ---------------------------------------------------------------------------------MENU -->
-   <div id="menu">
+  <!-- START ---------------------------------------------------------------------------------MENU -->
+  <div id="menu" ng-controller="User_menu">
     <div class="logo">
       <img
         width="150px"
@@ -54,78 +58,116 @@
     <div class="timkiem-mobile-btn">
       <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
     </div>
-    <ul class="menu2">
+    <ul class="menu2" id="form_menu_user" style="display: block;" >
       <li class="trangchu">
-        <a  href="/index.html"> <b> Trang chủ</b> </a>
+        <a  onclick="Form_TrangChu()"> <b> Trang chủ</b> </a>
       </li>
     
-
       <li class="trangchu1">
-        <a href="/Diễn đàn.html"
+        <a  onclick="Form_DienDan()"
           ><b>Diễn đàn </b> <i class="fa-solid fa-angle-down"></i
         ></a>
         <ul class="submenu">
-          <li>
-            <a href="#">Chăm sóc xe - chơi xe</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Công nghệ ô tô</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Đánh giá xe</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Giao thông - lái xe</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Hỏi - đáp</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Đánh giá xe</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Phong cách sống</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Tâm sự</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Tin tức</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">My VinFast Moment</a>
+          <li ng-repeat="c in listChuDe_menu">
+            <a href="http://127.0.0.1:5501/User%20copy/Ch%E1%BB%A7%20%C4%91%E1%BB%81.html?id={{c.iD_Topic}}">{{c.title}}</a>
           </li>
         </ul>
       </li>
 
       <li class="trangchu1">
-        <a href="./Thư viện.html"><b>Liên hệ</b></a>
+        <a href="#"><b>Liên hệ</b></a>
       </li>
 
 
       <li class="trangchu2">
         <hr>
-        <a href="./Đăng nhập.html"><b>Đăng nhập</b></a>
+        <a onclick="Form_DangNhap()"><b>Đăng nhập</b></a>
       </li>
       <li class="trangchu2">
-        <a href="#"><b>Đăng ký</b></a>
+        <a onclick="Form_DangKy()"><b>Đăng ký</b></a>
       </li>
     </ul>
-    <div class="timkiem-taikhoan">
-      <i class="fa-solid fa-magnifying-glass fa-xl"> </i> 
+    <div id="khung_inp_timkiem" style="display: none;">
+      <input type="text" id="inp_timkiem_header" placeholder="Tìm kiếm bài viết..."
+      ng-keyup="handleKeyUp($event)">
+      <img src="../Hình ảnh/icon_btn_timkiem.svg" alt="#">
+    </div>
+    
+    <div class="timkiem-taikhoan">  
+      <button ng-click="btn_timkiem_user()" type="submit" id="btn_timkiem_user">      <i class="fa-solid fa-magnifying-glass fa-xl"> </i> 
+      </button>
       <img width="20px" height="30px" src="../Hình ảnh/icons8_vertical_line_50px_3.png" alt="">
-      <a href="./Đăng nhập.html">
-        
-        <button class="btn-dangnhap" value="Đăng nhập"  >Đăng nhập</button>
-      </a>
+      <button id="btn_nofication"  onclick="Form_ThongBao()"><img src="../Hình ảnh/icons8_notification_1.svg" alt="" width="100%" height="100%"></button>
+      <div id="form_notifications" style="display: none;">
+        <h2>Thông báo</h2>
 
-      <button class="btn-dangky" value="Đăng ký">Đăng ký</button>
+
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/card-diendan-2.png" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">12 phút trước</div>
+          </div>
+        </a>
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/congnghe-avt2.jpg" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng 2
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">1 tiếng trước</div>
+          </div>
+        </a>
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/congnghe-avt1.jpg" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng 3
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">30 phút trước</div>
+          </div>
+        </a>
+
+
+      </div>
+      <div id="ctl_dangnhap_dangky_user">
+        <a  href="./Đăng nhập_User.html">
+        <button class="btn-dangnhap" value="Đăng nhập" onclick="Form_DangNhap()" > Đăng nhập</button>
+      </a>
+        <button class="btn-dangky" value="Đăng ký" onclick="Form_DangKy()" >Đăng ký</button>
+      </div>
+      <div id="ctl_thongtintaikhoan">
+        <div class="ctl_user_header">
+          <div onclick="hienthichucnanguser()" id="user-control_header" style="background-color: rgb(255, 255, 255);">
+          
+            <a href="#"><div id="name_user_menu"></div><img id="avt_user_menu" src="" alt="thông báo"><i class="fa-solid fa-angle-down"></i>
+            </a>
+          </div>
+
+          <div id="khung_ctl_user_header" style="display: none;">
+            <button id="btn_dangxuat" onclick="Form_DangNhap()">Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+      
     </div>
     <div class="menu-mobile-btn">
       <i class="fa-solid fa-bars" style="color: #020203;"></i>
     </div>
   </div>
   <!-- END ---------------------------------------------------------------------------------MENU -->
+
    
 <main>
     
@@ -133,362 +175,122 @@
   <div id="chudes">
 
     <div class="khung-chude" width="100%">
-       
-            <img src="https://cmu-cdn.vinfast.vn/2022/08/d483ada3-chamsocxe1200.png">
-            <div class="card-noidung">
-                <div class="tieude-khung-chude">Chăm xe - Chơi xe</div>
-                <div class="khung-chude_tuongtac">1.8k Chủ đề | 13.3K Trả lời</div>
-            </div>
-     
-    </div>
-
+      <img ng-src="{{listTopic_ID[0].image}}" height="30px">
+      <div class="card-noidung">
+          <div class="tieude-khung-chude">{{listTopic_ID[0].title}}</div>
+          <div class="khung-chude_tuongtac">1.8k Chủ đề | 13.3K Trả lời</div>
+      </div>
+  </div>
+  
     
-
+  </div>
 
     <!-- Chủ đề- diễn đàn -------------------------------------------------------------START -->
     <div class="chude-diendans">
       <div class="baiviets">
         <div class="tieude-baiviets">
+          <div class="taobaiviet">
+            <img src="../Hình ảnh/logo.jpg" alt="">
+            <input onclick="btn_taobaiviet()" id="btn_taobaiviet" type="button" value="Tạo bài viết">
+          </div>
+
+          <div id="overlay" class="overlay">
+            <div class="popup ">      <h2>Điền thông tin</h2>
+              <div class="close">
+        
+                <img src="../Hình ảnh/icons8_Close_3.svg" alt="" ng-click="closeOverlay()">
+              </div>
+
+              <div class="dienthongtin">
+
+                <div class="tieude_input">Chủ đề:</div>
+                <select ng-model="BaiViet.iD_Topic" id="dienthongtin_chude">
+                  <option ng-repeat="x in listChuDe"  value="{{x.iD_Topic}}">{{x.title}}</option>
+              </select>
+
+              <div class="tieude_input">Tiêu đề:</div>
+
+                  <input ng-model="BaiViet.title" id="dienthongtin_tieude" type="text" placeholder="Tiêu đề bài viết"> 
+                  <div  class="tieude_input">Tóm tắt nội dung chính:</div>
+                  <textarea class="inp_chung" ng-model="BaiViet.synopsis" id="dienthongtin_tomtat" rows="3"  placeholder="Điền nội dung bình bài viết"></textarea>
+                  <div class="khung_dienchitiet">
+                    <div class="dienchitiet" ng-repeat="post in BaiViet.list_json_posts track by $index">
+                      <div class="tieude_input">Nội dung đoạn {{$index + 1}}:</div>
+  
+                    <textarea id="dienthongtin_noidung" class="inp_chung" rows="3" ng-model="post.content"  placeholder="Điền nội dung bình bài viết"></textarea>
+                    
+                     Hình ảnh:<input type="file" id="fileInput_{{$index}}" ng-model="post.image"  onchange="angular.element(this).scope().handleFileChange(this)" name="Chọn hình ảnh">
+                  </div>
+                  </div>
+                 
+                 <div class="khung_themchitiet">
+
+                   <button type="submit" id="btn_thembaiviet" ng-click="addPost()"><img src="../Hình ảnh/icon_cộng.svg" width="25px" height="25px" alt="">Thêm đoạn văn</button>
+                 </div>
+              </div>
+
+              <div class="chucnang">
+                <input ng-click="btn_dangbaiviet()" type="button" value="Đăng" id="btn_dangbaiviet">
+              </div>
+
+            </div>
+          </div>
           <div class="tieude-baiviets_trai chinhsualink">
-            
-            <a href="#" class="chinhsualink">CHỦ ĐỀ</a>
+            <button type="submit" class="btn_hienthibaiviettheoaz btn_hienthitheoaz"  ng-click="search_desc_and_asc()" style="color: #464646;"> BÀI VIẾT <img style="display: block;" height="20px" width="20px" id="btn_icon_baiviet_den"  src="../Hình ảnh/icon_tubedenlon.svg" alt="">
+              <img id="btn_icon_baiviet_xanh"  src="../Hình ảnh/icon_tulondenbe.svg" alt="" height="20px" width="20px" style="display: none;">
+            </button>
             
           </div>
 
           <div class="tieude-baiviets_phai ">
-            <a href="#" class="chinhsualink">BÌNH LUẬN
-            </a>
-            <a href="#" class="chinhsualink">LƯỢT XEM</a>
-            <a href="#" class="chinhsualink">MỚI NHẤT</a>
-
+            <!-- Bình luận -->
+            <button type="submit" class="btn_hienthibinhluantheoaz btn_hienthitheoaz"  ng-click="search_binhluan_desc_and_asc()" style="color: #464646;"> BÌNH LUẬN 
+              <img style="display: block;" height="20px" width="20px" id="btn_icon_binhluan_den"  src="../Hình ảnh/icon_tubedenlon.svg" alt="">
+              <img id="btn_icon_binhluan_xanh"  src="../Hình ảnh/icon_tulondenbe.svg" alt="" height="20px" width="20px" style="display: none;">
+            </button>
+            <!-- lượt thích -->
+            <button type="submit" class="btn_hienthithichtheoaz btn_hienthitheoaz"  ng-click="search_luotthich_desc_and_asc()" style="color: #464646;"> LƯỢT THÍCH 
+              <img style="display: block;" height="20px" width="20px" id="btn_icon_luotthich_den"  src="../Hình ảnh/icon_tubedenlon.svg" alt="">
+              <img id="btn_icon_luotthicht_xanh"  src="../Hình ảnh/icon_tulondenbe.svg" alt="" height="20px" width="20px" style="display: none;">
+            </button>
           </div>
         </div>
- <hr>
-
-         <!-- bài viết 1 -->
-        <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
-         
-          <div class="avt-baiviet">
-            <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-          </div>
-          <div class="tieudes-baiviet">
-           
-            <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-            <div class="tacgia">VinFast Community</div>
-            <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-          </div>
-  
-          <div class="binhluan">
+        <div class="list_baiviets" ng-repeat="P in listPosts track by P.iD_Post" >
+          <hr>
+          <!-- bài viết 1 -->
+         <a href="./Bài viết.html?id={{P.iD_Post}}" class="linkbaiviet" >
+             <img class="avt-baiviet" src="../Hình ảnh/card-diendan-1.png" alt="">
+           <div class="tieudes-baiviet">
+             <div class="tieudechinh-baiviet"> {{P.title}}</div>
+             <div class="tacgia">Người dùng</div>
+             <div class="thoigiandang"> {{ P.createdDate }} </div>
+           </div>
+           <div class="list_binhluan binhluan">
+             <div class="view-binhluan">
+               30
+             </div>
+             <h3>Bình luận</h3>
+           </div>
+           <div class="list_thich binhluan">
             <div class="view-binhluan">
-              499
+              20
             </div>
-            <h3>Bình luận</h3>
-  
+            <h3>Lượt thích</h3>
           </div>
-  
-          <div class="luotxem">
-            <div class="view-luotxem">7.7K</div>
-            <h3>Lượt xem</h3>
-          </div>
-  
-          <div class="moinhat">
-            <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-            <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-            <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-          </div>
-  
-        </a>
-  
-         <!-- bài viết 2 -->
- <hr>
+         </a>
 
- <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
-         
-          <div class="avt-baiviet">
-            <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-          </div>
-          <div class="tieudes-baiviet">
-           
-            <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-            <div class="tacgia">VinFast Community</div>
-            <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-          </div>
-  
-          <div class="binhluan">
-            <div class="view-binhluan">
-              499
-            </div>
-            <h3>Bình luận</h3>
-  
-          </div>
-  
-          <div class="luotxem">
-            <div class="view-luotxem">7.7K</div>
-            <h3>Lượt xem</h3>
-          </div>
-  
-          <div class="moinhat">
-            <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-            <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-            <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-          </div>
-  
-        </a>
-                 <!-- bài viết 2 -->
- <hr>
-
- <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
- 
-  <div class="avt-baiviet">
-    <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-  </div>
-  <div class="tieudes-baiviet">
-   
-    <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-    <div class="tacgia">VinFast Community</div>
-    <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-  </div>
-
-  <div class="binhluan">
-    <div class="view-binhluan">
-      499
-    </div>
-    <h3>Bình luận</h3>
-
-  </div>
-
-  <div class="luotxem">
-    <div class="view-luotxem">7.7K</div>
-    <h3>Lượt xem</h3>
-  </div>
-
-  <div class="moinhat">
-    <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-    <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-    <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-  </div>
-
-</a>
-         <!-- bài viết 2 -->
-         <hr>
-
-         <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
-         
-          <div class="avt-baiviet">
-            <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-          </div>
-          <div class="tieudes-baiviet">
-           
-            <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-            <div class="tacgia">VinFast Community</div>
-            <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-          </div>
-  
-          <div class="binhluan">
-            <div class="view-binhluan">
-              499
-            </div>
-            <h3>Bình luận</h3>
-  
-          </div>
-  
-          <div class="luotxem">
-            <div class="view-luotxem">7.7K</div>
-            <h3>Lượt xem</h3>
-          </div>
-  
-          <div class="moinhat">
-            <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-            <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-            <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-          </div>
-  
-        </a>
-                 <!-- bài viết 2 -->
- <hr>
-
- <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
- 
-  <div class="avt-baiviet">
-    <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-  </div>
-  <div class="tieudes-baiviet">
-   
-    <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-    <div class="tacgia">VinFast Community</div>
-    <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-  </div>
-
-  <div class="binhluan">
-    <div class="view-binhluan">
-      499
-    </div>
-    <h3>Bình luận</h3>
-
-  </div>
-
-  <div class="luotxem">
-    <div class="view-luotxem">7.7K</div>
-    <h3>Lượt xem</h3>
-  </div>
-
-  <div class="moinhat">
-    <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-    <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-    <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-  </div>
-
-</a>
-         <!-- bài viết 2 -->
-         <hr>
-
-         <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
-         
-          <div class="avt-baiviet">
-            <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-          </div>
-          <div class="tieudes-baiviet">
-           
-            <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-            <div class="tacgia">VinFast Community</div>
-            <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-          </div>
-  
-          <div class="binhluan">
-            <div class="view-binhluan">
-              499
-            </div>
-            <h3>Bình luận</h3>
-  
-          </div>
-  
-          <div class="luotxem">
-            <div class="view-luotxem">7.7K</div>
-            <h3>Lượt xem</h3>
-          </div>
-  
-          <div class="moinhat">
-            <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-            <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-            <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-          </div>
-  
-        </a>
-                 <!-- bài viết 2 -->
- <hr>
-
- <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
- 
-  <div class="avt-baiviet">
-    <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-  </div>
-  <div class="tieudes-baiviet">
-   
-    <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-    <div class="tacgia">VinFast Community</div>
-    <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-  </div>
-
-  <div class="binhluan">
-    <div class="view-binhluan">
-      499
-    </div>
-    <h3>Bình luận</h3>
-
-  </div>
-
-  <div class="luotxem">
-    <div class="view-luotxem">7.7K</div>
-    <h3>Lượt xem</h3>
-  </div>
-
-  <div class="moinhat">
-    <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-    <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-    <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-  </div>
-
-</a>
-         <!-- bài viết 2 -->
-         <hr>
-         <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
-         
-          <div class="avt-baiviet">
-            <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-          </div>
-          <div class="tieudes-baiviet">
-           
-            <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-            <div class="tacgia">VinFast Community</div>
-            <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-          </div>
-  
-          <div class="binhluan">
-            <div class="view-binhluan">
-              499
-            </div>
-            <h3>Bình luận</h3>
-  
-          </div>
-  
-          <div class="luotxem">
-            <div class="view-luotxem">7.7K</div>
-            <h3>Lượt xem</h3>
-          </div>
-  
-          <div class="moinhat">
-            <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-            <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-            <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-          </div>
-  
-        </a>
-
-         <!-- bài viết 3 -->
-         <hr>
-
-         <a href="/Bài viết.html" class="linkbaiviet chinhsualink">
-         
-          <div class="avt-baiviet">
-            <img src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
-          </div>
-          <div class="tieudes-baiviet">
-           
-            <div class="tieudechinh-baiviet"> Bảng quyền lợi thành viên 2023</div>
-            <div class="tacgia">VinFast Community</div>
-            <div class="thoigiandang">1 tháng, 4 tuần trước</div>
-          </div>
-  
-          <div class="binhluan">
-            <div class="view-binhluan">
-              499
-            </div>
-            <h3>Bình luận</h3>
-  
-          </div>
-  
-          <div class="luotxem">
-            <div class="view-luotxem">7.7K</div>
-            <h3>Lượt xem</h3>
-          </div>
-  
-          <div class="moinhat">
-            <img src="../Hình ảnh/congnghe-phu3.jpg" alt="" class="anhmot-moinhat1 anhmot-moinhat">
-            <img src="../Hình ảnh/card1.jpg" alt="" class="anhmot-moinhat2 anhmot-moinhat ">
-            <img src="../Hình ảnh/congnghe-phu1.jpg" alt="" class="anhmot-moinhat3 anhmot-moinhat">
-          </div>
-  
-        </a>
-
+        </div>
+       <div class="khung_chucnangxemthem">
+        <button id="btn_xemthem_baiviet" ng-click="btn_xemthem()">Xem Thêm</button>
       </div>
-
-
+      </div>
       <div class="quangcao-trangchude">
         <div class="quangcao-hinhanh1">
           <img src="https://cmu-cdn.vinfast.vn/2023/10/d1694c46-microsoftteams-image-1-768x1024.jpg" alt="#">
         </div>
       </div>
     </div>
+ 
     <!-- Chủ đề- diễn đàn -------------------------------------------------------------END -->
 
   </div>

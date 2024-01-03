@@ -114,10 +114,10 @@ input::placeholder{
  
   }
 
-  #dangnhap svg{
+  .dangnhap svg{
     margin-left: 10px;
   }
-  #dangnhap p{
+  .dangnhap p{
     margin-top: 2px;
     margin-bottom: 0px;
    

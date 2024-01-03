@@ -68,3 +68,8 @@ window.addEventListener("load", function () {
   }
 });
 
+var app = angular.module("AppDienDan", []);
+app.controller("User_Index", function ($scope, $http) {
+
+
+});

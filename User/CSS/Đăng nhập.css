@@ -17,7 +17,7 @@ header {
 #login {
   width: 326px;
   background-color: #ffffff;
-  height: 57%;
+  /* height: 57%; */
 }
 
 .login-title {

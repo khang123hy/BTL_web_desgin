@@ -9,18 +9,12 @@
 
   <link rel="icon" href="../Hình ảnh/logo4.png" type="image/png" />
   <title>Diễn đàn - Cộng đồng VinFast Toàn cầu</title>
-  <link rel="stylesheet" href="../CSS/Bài viết.css">
+  <link rel="stylesheet" href="./CSS/Bài viết.css">
 
   <link rel="stylesheet" href="../Menu/reponsive-Trang_Chu.css" />
-  <link rel="stylesheet" href="../CSS/reset.css" />
-  <link
-  rel="stylesheet"
-  href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css"
-/>
-<link
-  rel="stylesheet"
-  href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"
-/>
+  <link rel="stylesheet" href="./CSS/reset.css" />
+  <link rel="stylesheet" href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css" />
+  <link rel="stylesheet" href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -28,105 +22,157 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="./CSS/index.css">
   <link rel="stylesheet" href="./CSS/Bài viết.css">
-
-
+  <link rel="stylesheet" href="./CSS/Diễn đàn.css">
+  <script src="./JS/jquery-3.7.0.min.js"></script>
+  <script src="../angular.min.js">  </script> 
+  <script src="./JS/Bài Viết.js">  </script>
+  <script src="../Menu/Menu.js">  </script>
+  <script src="../ADMIN/JS/bar.js">  </script>
 
 </head>
 
-<body>
+<body ng-app="AppDienDan" ng-controller="User">
   <!-- START ---------------------------------------------------------------------------------MENU -->
-  <div id="menu">
+  <div id="menu" ng-controller="User_menu">
     <div class="logo">
-      <img width="150px" max-height="74px" src="../Hình ảnh/logo.png" alt="" class="logoPC" />
-      <img width="50px" max-height="100%" src="../Hình ảnh/LOGO2.png" alt="" class="logoTL_MB" />
+      <img
+        width="150px"
+        max-height="74px"
+        src="../Hình ảnh/logo.png"
+        alt=""
+        class="logoPC"
+      />
+      <img
+        width="50px"
+        max-height="100%"
+        src="../Hình ảnh/LOGO2.png"
+        alt=""
+        class="logoTL_MB"
+      />
     </div>
     <div class="timkiem-mobile-btn">
       <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
     </div>
     <ul class="menu2">
       <li class="trangchu">
-        <a href="/index.html"> <b> Trang chủ</b> </a>
+        <a  onclick="Form_TrangChu()"> <b> Trang chủ</b> </a>
       </li>
-
-
+    
       <li class="trangchu1">
-        <a href="/Diễn đàn.html"><b>Diễn đàn </b> <i class="fa-solid fa-angle-down"></i></a>
+        <a  onclick="Form_DienDan()"
+          ><b>Diễn đàn </b> <i class="fa-solid fa-angle-down"></i
+        ></a>
         <ul class="submenu">
-          <li>
-            <a href="#">Chăm sóc xe - chơi xe</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Công nghệ ô tô</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Đánh giá xe</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Giao thông - lái xe</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Hỏi - đáp</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Đánh giá xe</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Phong cách sống</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Tâm sự</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">Tin tức</a>
-          </li>
-          <li>
-            <a href="/Chủ đề chăm xe - chơi xe.html">My VinFast Moment</a>
+          <li ng-repeat="c in listChuDe_menu">
+            <a href="http://127.0.0.1:5501/User/Ch%E1%BB%A7%20%C4%91%E1%BB%81.html?id={{c.iD_Topic}}">{{c.title}}</a>
           </li>
         </ul>
       </li>
 
       <li class="trangchu1">
-        <a href="./Thư viện.html"><b>Liên hệ</b></a>
+        <a href="#"><b>Liên hệ</b></a>
       </li>
+
 
       <li class="trangchu2">
         <hr>
-        <a href="./Đăng nhập.html"><b>Đăng nhập</b></a>
+        <a onclick="Form_DangNhap()"><b>Đăng nhập</b></a>
       </li>
       <li class="trangchu2">
-        <a href="#"><b>Đăng ký</b></a>
+        <a onclick="Form_DangKy()"><b>Đăng ký</b></a>
       </li>
     </ul>
     <div class="timkiem-taikhoan">
-      <i class="fa-solid fa-magnifying-glass fa-xl"> </i>
+      <i class="fa-solid fa-magnifying-glass fa-xl"> </i> 
       <img width="20px" height="30px" src="../Hình ảnh/icons8_vertical_line_50px_3.png" alt="">
-      <a href="./Đăng nhập.html">
+      <button id="btn_nofication"  onclick="Form_ThongBao()"><img src="../Hình ảnh/icons8_notification_1.svg" alt="" width="100%" height="100%"></button>
+      <div id="form_notifications" style="display: none;">
+        <h2>Thông báo</h2>
 
-        <button class="btn-dangnhap" value="Đăng nhập">Đăng nhập</button>
+
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/card-diendan-2.png" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">12 phút trước</div>
+          </div>
+        </a>
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/congnghe-avt2.jpg" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng 2
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">1 tiếng trước</div>
+          </div>
+        </a>
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/congnghe-avt1.jpg" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng 3
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">30 phút trước</div>
+          </div>
+        </a>
+
+
+      </div>
+      <div id="ctl_dangnhap_dangky_user">
+        <a  href="./Đăng nhập_User.html">
+        <button class="btn-dangnhap" value="Đăng nhập" onclick="Form_DangNhap()" > Đăng nhập</button>
       </a>
+        <button class="btn-dangky" value="Đăng ký" onclick="Form_DangKy()" >Đăng ký</button>
+      </div>
+      <div id="ctl_thongtintaikhoan">
+        <div class="ctl_user_header">
+          <div onclick="hienthichucnanguser()" id="user-control_header">
+          
+            <a href="#"><div id="name_user_menu"></div><img id="avt_user_menu" src="" alt="thông báo"><i class="fa-solid fa-angle-down"></i>
+            </a>
+          </div>
 
-      <button class="btn-dangky" value="Đăng ký">Đăng ký</button>
+          <div id="khung_ctl_user_header" style="display: none;">
+            <button id="btn_dangxuat" onclick="Form_DangNhap()">Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+      
     </div>
     <div class="menu-mobile-btn">
       <i class="fa-solid fa-bars" style="color: #020203;"></i>
     </div>
   </div>
   <!-- END ---------------------------------------------------------------------------------MENU -->
+
+
   <main>
     <div class="main-left">
-      <a href="#" class="tenchude">
-        CÔNG NGHỆ Ô TÔ
+      <a href="./Chủ đề.html?id={{CT_Posts_ID.iD_Topic}}" class="tenchude">
+        {{CT_Posts_ID[0].iD_Topic}}
       </a>
 
       <h1 class="tieudebaiviet">
-        Sử dụng gg maps và youtube trên màn hình
+        {{CT_Posts_ID[0].title}}
       </h1>
       <div class="USER">
-        <a href="#" class="user-avt"><img src="../Hình ảnh/congnghe-phu2.jpg" alt="Lỗi r"></a>
+        <a href="#" class="user-avt"><img src="../Hình ảnh/card-diendan-2.png" alt="Lỗi r"></a>
 
         <div class="chitiet-name">
           <div class="xuongdong">
-            <a href="" class="user-name">Tú Tú</a>
+            <a href="" class="user-name"> Người dùng đăng bài
+            </a>
 
           </div>
           <div class="user-quyenvadiem">
@@ -157,35 +203,26 @@
         <div class="class"></div>
         <div class="khungtimedangbai">
 
-          <div class="timedangbai">28/10/2023 lúc 08:25</div>
+          <div class="timedangbai">{{CT_Posts_ID[0].createdDate }}</div>
         </div>
 
 
       </div>
+      <div class="khung_chitietbaiviet" ng-repeat="ct in CT_Posts_ID[0].list_json_posts">
+        <p class="noidungbaiviet">{{ct.content}} </p>
 
-      <p class="noidungbaiviet">
-        Em muốn sử dụng gg maps và youtube trên màn zin của xe thì làm thế nào ạ?
-      </p>
+
+        <div class="hinhanh_baiviet_chitiet">
+          <img  max-width="800px"  max-height="800px" src="{{ct.image}}" alt="Lỗi">
+        </div>
+      </div>
+     
+
+
       <div class="hastags">
         <div class="iconhastag">
-          <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 128 128">
-            <path fill="#fff"
-              d="M64.2,21.4c4.8,0.3,9.4,2.4,12.8,5.8l44.2,44.2c3.9,3.9,3.9,10.2,0,14.1l-35.4,35.4c-3.9,3.9-10.2,3.9-14.1,0 L27.5,76.7c-3.4-3.4-5.5-8-5.8-12.8l-1.5-22.7c-0.8-12.1,9.2-22.1,21.3-21.3L64.2,21.4z" />
-            <path fill="#444b54"
-              d="M78.8,126.8c-3.5,0-6.7-1.4-9.2-3.8L25.4,78.8c-3.9-3.9-6.3-9.2-6.7-14.7c-0.1-1.7,1.1-3.1,2.8-3.2 c1.7-0.1,3.1,1.1,3.2,2.8c0.3,4.1,2,8,4.9,10.9l44.2,44.2c1.3,1.3,3.1,2,4.9,2c1.9,0,3.6-0.7,5-2l35.4-35.4 c1.3-1.3,2.1-3.1,2.1-4.9c0-1.9-0.7-3.6-2.1-4.9L74.9,29.3c-2.9-2.9-6.8-4.7-10.9-4.9l-22.7-1.5c-4.9-0.3-9.7,1.5-13.2,4.9 c-3.5,3.5-5.3,8.3-4.9,13.2c0.1,1.7-1.1,3.1-2.8,3.2c-1.7,0.1-3.1-1.1-3.2-2.8c-0.4-6.6,2-13.1,6.7-17.8 c4.7-4.7,11.2-7.1,17.8-6.7l22.7,1.5c5.6,0.4,10.8,2.7,14.7,6.7l44.2,44.2c5.1,5.1,5.1,13.3,0,18.4L88,123 C85.5,125.5,82.2,126.8,78.8,126.8z" />
-            <path fill="#444b54"
-              d="M24.7,56.5c-8.3,0-16.6-3.1-23.1-9.2l0,0c-1.1-1-1.3-2.6-0.6-3.8c1.1-1.6,3.3-1.8,4.6-0.6l0.1,0.1 c9.9,9.4,25.1,10.1,35.7,1.9c1.2-0.9,2.9-0.8,4,0.3l0.1,0.1c1.2,1.3,1,3.3-0.4,4.3C39.1,54.2,31.9,56.5,24.7,56.5z" />
-            <path fill="#444b54"
-              d="M3.8,76.9c-0.3,0-0.6,0-0.8-0.1c-1.6-0.5-2.5-2.1-2-3.7l0-0.2c0.5-1.6,2.1-2.5,3.7-2c1.6,0.5,2.5,2.1,2,3.7 l0,0.2C6.3,76,5.1,76.9,3.8,76.9z" />
-            <path fill="#444b54"
-              d="M3.8,76.7c-0.3,0-0.6,0-0.8-0.1c-1.6-0.5-2.5-2.1-2-3.7c1.4-4.7,3.8-9,7-12.7c1.1-1.2,3-1.4,4.2-0.3 c1.2,1.1,1.4,3,0.3,4.2c-2.7,3-4.6,6.5-5.8,10.4C6.3,75.9,5.1,76.7,3.8,76.7z" />
-            <path fill="#71c2ff"
-              d="M63.3,65.6l3.1,9.1c0.2,0.6,0.1,1.3-0.3,1.8l-5.7,7.7c-1,1.3,0,3.2,1.6,3.2l9.6-0.1c0.7,0,1.3,0.3,1.7,0.8 l5.5,7.8c1,1.4,3.1,1,3.5-0.6l2.8-9.1c0.2-0.6,0.7-1.1,1.3-1.3l9.1-2.8c1.6-0.5,1.9-2.6,0.6-3.5l-7.8-5.5c-0.5-0.4-0.9-1-0.8-1.7 l0.1-9.6c0-1.7-1.9-2.6-3.2-1.6l-7.7,5.7c-0.5,0.4-1.2,0.5-1.8,0.3L65.8,63C64.3,62.5,62.8,64,63.3,65.6z" />
-            <path fill="#444b54"
-              d="M50.8,56.7c-1,0-2-0.5-2.5-1.4c-0.9-1.4-0.5-3.3,0.9-4.1c1.8-1.1,3-3,3.2-5.2c0.2-1.9-0.3-3.7-1.5-5.1 c-1.2-1.5-2.8-2.4-4.7-2.6c-2.3-0.2-4.6,0.7-6.1,2.5c-1.1,1.3-3,1.4-4.2,0.4c-1.3-1.1-1.4-3-0.4-4.2c2.8-3.3,7-5,11.3-4.6 c3.4,0.4,6.6,2,8.7,4.7s3.2,6.1,2.8,9.5c-0.4,4-2.6,7.5-6,9.7C51.9,56.6,51.4,56.7,50.8,56.7z" />
-          </svg>
+          <img src="../Hình ảnh/icon_hastag.svg">
         </div>
-
         <div class="hastag-cha">
           <a href="#" class="hastag">#Luxa2.0</a>
           <a href="#" class="hastag">#Luxa2.0</a>
@@ -193,51 +230,103 @@
           <a href="#" class="hastag">#Luxa2.0</a>
           <a href="#" class="hastag">#Luxa2.0</a>
           <a href="#" class="hastag">#Luxa2.0</a>
-          <a href="#" class="hastag">#Luxa2.0</a>
         </div>
-
-
-
       </div>
 
+      <div class="form_hienthi_binhluanvathich" >
+
+        <button type="submit" ng-click="btn_hienthiluonglike()" id="btn_hienthiluonglike">
+          <img src="../Hình ảnh/love.png" alt="" width="25px" height="25px" >
+          <span id="soluongthich"> 20 - </span> 
+
+
+        </button>
+          
+        <div id="overlay" class="overlay">
+          <div class="popup" style="width: 550px; height: 500px;">      <h2>Số lượt thích 3 </h2>
+            <div class="close">
+      
+              <img src="../Hình ảnh/icons8_Close_3.svg" alt="" ng-click="closeOverlay()">
+            </div>
+
+            <div class="khung_thongtinluotthichs">
+              <div class="khung_thongtinluotthich" >
+                <img id="khung_thongtinluotthich_img" src="../Hình ảnh/ganday-anh2.jpg" alt="">
+                <div id="khung_thongtinluotthich_ten">Nguyễn Văn A</div>
+              </div>
+              <div class="khung_thongtinluotthich" >
+                <img id="khung_thongtinluotthich_img" src="../Hình ảnh/diendan-avt2.png" alt="">
+                <div id="khung_thongtinluotthich_ten">Nguyễn Văn B</div>
+              </div>
+              <div class="khung_thongtinluotthich" >
+                <img id="khung_thongtinluotthich_img" src="../Hình ảnh/doisong-anhchinh1.jpg" alt="">
+                <div id="khung_thongtinluotthich_ten">Nguyễn Văn C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+          <img src="../Hình ảnh/icon_comment.svg" alt="" width="20px" height="20px">
+          <span id="soluongbinhluan"> {{listComments.length}} Bình luận</span>
+  
+      </div>
+      <hr style="margin-top: 10px;">
+      <button type="submit" ng-click="btn_like_posts(CT_Like_ID.iD_Likes)" id="btn_like">      <img id="icon_dathichbaiviet" src="../Hình ảnh/love.png" alt="" width="25px" height="25px" style="display: none;" >
+        <img id="icon_chuathichbaiviet" src="../Hình ảnh/icon_chuathich.svg" alt="" width="20px" height="20px" style="display: block;" >
+        Thích 
+        </button>
+      <hr>
 
       <h1 class="tieudebaiviet">Bình luận</h1>
-
       <div class="user-binhluan">
         <div class="form-group">
           <textarea id="edt_binhluanbaiviet" class="nhapnoidungvabinhluan" rows="2" oninput="autoExpand(this)"
             placeholder="Điền nội dung bình luận..."></textarea>
         </div>
-        <button type="submit" id="btn-binhluanbaiviet">Bình luận</button>
+        <button type="submit" ng-click="btn_binhluanbaiviet()" id="btn-binhluanbaiviet">Bình luận</button>
       </div>
 
-      <div id="user-dabinhluans">
-        <div class="user-dabinhluan">
-          <div class="user-thongtin">
-            <a href="#" class="user-avt"><img src="../Hình ảnh/congnghe-phu3.jpg" alt="Lỗi r"></a>
-            <a href="#" class="user-name">HIHI</a>
-            <div class="user-quyenvadiem">
-              <span title="Thành viên"
-                class="gamipress-bbpress-rank-thumbnail gamipress-bbpress-vf-community_member-thumbnail">
-                <img width="25" height="25" src="https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member-50x50.png"
-                  class="gamipress-rank-thumbnail wp-post-image wp-stateless-item" alt="" decoding="async"
-                  loading="lazy"
-                  srcset="https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member-50x50.png 50w, https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member-150x150.png 150w, https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member-100x100.png 100w, https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member.png 240w"
-                  sizes="(max-width: 25px) 100vw, 25px" data-image-size="25x25"
-                  data-stateless-media-bucket="prod-vinfast-vn-cmu-data"
-                  data-stateless-media-name="2022/08/ddae6ee5-member.png">
-              </span>
-              Thành viên
+      <div class="khung_binhluan_posts">
+        <div id="user-dabinhluans" ng-repeat="c in listComments track by c.iD_Comment">
+       
+          <div class="user-dabinhluan">
+            <div class="khung_user_dabinhluan">
+              <div class="user-thongtin">
+                <a href="#" class="user-avt"><img src="{{c.avatar}}" alt="Lỗi r"></a>
+                <a href="#" class="user-name">{{c.fullName}}</a>
+                <div class="user-quyenvadiem">
+                  <span title="Thành viên"
+                    class="gamipress-bbpress-rank-thumbnail gamipress-bbpress-vf-community_member-thumbnail">
+                    <img width="25" height="25" src="https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member-50x50.png"
+                      class="gamipress-rank-thumbnail wp-post-image wp-stateless-item" alt="" decoding="async"
+                      loading="lazy"
+                      srcset="https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member-50x50.png 50w, https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member-150x150.png 150w, https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member-100x100.png 100w, https://cmu-cdn.vinfast.vn/2022/08/ddae6ee5-member.png 240w"
+                      sizes="(max-width: 25px) 100vw, 25px" data-image-size="25x25"
+                      data-stateless-media-bucket="prod-vinfast-vn-cmu-data"
+                      data-stateless-media-name="2022/08/ddae6ee5-member.png">
+                  </span>
+                  Thành viên 
+                </div>
+                <div id="timedangbai"> {{c.createdDate | date:'dd/MM/yyyy lúc HH:mm'}}</div>
+              </div>
+
+                    <div class="user-chucnang-dabinhluan" ng-if="c.iD_User == _user.iD_User">
+            <button ng-click="btn_chucnang_dabinhluan($index)" id="btn_chucnang_dabinhluan" type="submit">
+              <img width="20px" height="20px" src="../Hình ảnh/icons8_dots_loading.svg" alt="">
+            </button>
+            <div class="from_chucnang_dabinhluan" ng-show="showForm[$index]">
+              <button ng-click="btn_xoa_binhluan(c.iD_Comment, $index)" id="btn_chucnang_xoa_dabinhluan">Xoá</button>
             </div>
-            <div id="timedangbai">28/10/2023 lúc 08:25</div>
           </div>
-          <p id="noidungbinhluan">
-            android auto
-          </p>
+            </div>
+           
+            <p id="noidungbinhluan">
+              {{c.content}}
+            </p>
+          </div>
         </div>
-
-
       </div>
+    
 
     </div>
     <div class="main-right">
@@ -249,6 +338,9 @@
       </div>
     </div>
   </main>
+
+
+
   <footer>
     <div class="duongline"></div>
 
@@ -401,8 +493,7 @@
     </div>
   </footer>
 
-  <script src="./JS/jquery-3.7.0.min.js"></script>
-  <script src="./JS/baiviet.js">  </script>
+
 
 
 </body>

@@ -1,20 +1,23 @@
 
 
     #menu {
-        position: -webkit-sticky;
         position: sticky;
         width: 100%;
         top: 0px;
-        height: 80px;
+        height: 70px;
         background-color: #ffffff;
         box-shadow: 0px 5px 10px rgba(150, 150, 220, 0.2);
         display: flex;
         box-sizing: border-box;
-        z-index: 200;
         padding-left: 7%;
-        padding-right: 7%;
+        padding-right: 5%;
         overflow: hidden;
+        z-index: 300;
       }
+#ctl_thongtintaikhoan{
+  display: none;
+}
+
       #menu ul {
         margin: 0px;
         margin-left: 15px;
@@ -25,6 +28,33 @@
         height: 100%;
         padding: 0;
 
+      }
+
+      #khung_inp_timkiem{
+        display: flex;
+        width: 70%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+
+      }
+
+      #inp_timkiem_header{
+        width: 80%;
+        border: 0.5px solid #807f7f94;
+        height: 40px;
+        border-radius: 20px;
+        padding-left: 40px;
+        padding-right: 20px;
+        font-size: 17px;
+        color: #565555cd;
+
+      }
+      #khung_inp_timkiem img{
+        position: absolute;
+        left: 95px;
       }
       .logoTL_MB{
         display: none;
@@ -59,7 +89,7 @@
       
       .submenu {
         display: none;
-        position: absolute;
+        /* position: absolute; */
         box-shadow: 0px 5px 10px rgba(2, 1, 1, 0.5);
         
       }
@@ -104,10 +134,17 @@
         align-items: center;
       }
       
-      .timkiem-taikhoan i {
-        margin-right: 10px;
+      #btn_timkiem_user{
+        border: 0px;
+        background-color: #fff;
+        height: 50px;
+        width: 40px;
+        border-radius: 10px;
       }
-      
+
+      #btn_timkiem_user:Hover{
+        background-color: #cdcbcb6e;
+      }
       .btn-dangky {
         background-color: rgb(20, 100, 244);
         color: #fff;
@@ -168,6 +205,115 @@
       img.duongkethang-dangnhap {
         display: none;
     }
+
+    #user-control_header img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      margin-right: 5px;
+    }
+
+    #name_user_menu{
+      margin-right: 5px;
+      color: #3e3e3e;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    #user-control_header{
+      padding: 0px 10px;
+      height: 100%;
+      border-radius: 10px;
+    }
+    
+    #user-control_header a{
+      display: flex;
+      align-items: center;
+    }
+    .ctl_user_header {
+      position: relative;
+    }
+  #khung_ctl_user_header{
+    position:fixed;
+    border-radius: 5px ;
+    width: 150px;
+    right:  70px;
+    top: 70px;
+    background-color: #b35d5d;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 0 5px #807f7f;
+    overflow: hidden;
+  }
+  #khung_ctl_user_header button{  
+    position:relative;
+  border: 0;
+  height: 25px;
+  background-color: #fff;
+  font-size: 13px;
+  }
+  #khung_ctl_user_header button:hover{
+    background-color: #c7c5c5;
+    } 
+
+    #btn_nofication{
+      width: 40px; height: 50px;
+      border: 0;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    #btn_nofication:hover{
+ 
+      background-color: #bababa6d;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    #form_notifications{
+      box-shadow: 0 0 5px #999;
+      position: fixed;
+      width: 400px;
+      height: 500px;
+      background-color: #ffffff;
+      top: 71px;
+      padding: 10px;
+      overflow: auto;
+      border-radius: 4px;
+    }
+    .card_notification{
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    .card_notification img{
+      width: 50px; height: 50px;
+      border-radius: 50px;
+      margin-right: 5px;
+    }
+
+  .title_content{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 43px;
+    font-size: 14px;
+    font-weight: 500;
+    
+  }
+  .title_content_bold{
+    font-weight: bold;
+  }
+  .time_content{
+    font-size: 13px;
+    color: #4a83ec;
+  }
+    .notification_khung_content{
+      width: 80%;
+      height: 60px;
+      background-color: #fff;
+    }
 /* mobile: with < 740px  */
 @media only screen and (max-width: 740px) {
 
@@ -226,6 +372,7 @@
         display: none;
         width: 100%;
       }
+
 
       .timkiem-mobile-btn{
         

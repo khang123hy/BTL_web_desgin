@@ -7,7 +7,7 @@
     <link  rel="icon" href="../Hình ảnh/logo4.png" type="image/png">
     <title>Trang chủ - Cộng đồng VinFast Toàn cầu</title>
     <link rel="stylesheet" href="../Menu/reponsive-Trang_Chu.css">
-    <link rel="stylesheet" href="../CSS/reset.css" />
+    <link rel="stylesheet" href="./CSS/reset.css" />
     <link      rel="stylesheet"     href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css"    />
     <link      rel="stylesheet"      href="../fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,102 +17,138 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" href="./CSS/index.css" />
+
+    <script src="./JS/jquery-3.7.0.min.js"></script>
+    <script src="../angular.min.js">  </script>
+    <script src="./JS/index.js">  </script>
+    <script src="../Menu/Menu.js">  </script>
   </head>
-  <body>
+
+  <body ng-app="AppDienDan" ng-controller="User_Index" >
    
-    <!-- START ---------------------------------------------------------------------------------MENU -->
-    <div id="menu">
-      <div class="logo">
-        <img
-          width="150px"
-          max-height="74px"
-          src="../Hình ảnh/logo.png"
-          alt=""
-          class="logoPC"
-        />
-        <img
-          width="50px"
-          max-height="100%"
-          src="../Hình ảnh/LOGO2.png"
-          alt=""
-          class="logoTL_MB"
-        />
-      </div>
-      <div class="timkiem-mobile-btn">
-        <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-      </div>
-      <ul class="menu2">
-        <li class="trangchu">
-          <a  href="/index.html"> <b> Trang chủ</b> </a>
-        </li>
-      
+  <!-- START ---------------------------------------------------------------------------------MENU -->
+  <div id="menu" ng-controller="User_menu">
+    <div class="logo">
+      <img
+        width="150px"
+        max-height="74px"
+        src="../Hình ảnh/logo.png"
+        alt=""
+        class="logoPC"
+      />
+      <img
+        width="50px"
+        max-height="100%"
+        src="../Hình ảnh/LOGO2.png"
+        alt=""
+        class="logoTL_MB"
+      />
+    </div>
+    <div class="timkiem-mobile-btn">
+      <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+    </div>
+    <ul class="menu2">
+      <li class="trangchu">
+        <a  onclick="Form_TrangChu()"> <b> Trang chủ</b> </a>
+      </li>
+    
+      <li class="trangchu1">
+        <a  onclick="Form_DienDan()"
+          ><b>Diễn đàn </b> <i class="fa-solid fa-angle-down"></i
+        ></a>
+        <ul class="submenu">
+          <li ng-repeat="c in listChuDe_menu">
+            <a href="http://127.0.0.1:5501/User/Ch%E1%BB%A7%20%C4%91%E1%BB%81.html?id={{c.iD_Topic}}">{{c.title}}</a>
+          </li>
+        </ul>
+      </li>
 
-        <li class="trangchu1">
-          <a href="/Diễn đàn.html"
-            ><b>Diễn đàn </b> <i class="fa-solid fa-angle-down"></i
-          ></a>
-          <ul class="submenu">
-            <li>
-              <a href="#">Chăm sóc xe - chơi xe</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">Công nghệ ô tô</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">Đánh giá xe</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">Giao thông - lái xe</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">Hỏi - đáp</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">Đánh giá xe</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">Phong cách sống</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">Tâm sự</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">Tin tức</a>
-            </li>
-            <li>
-              <a href="/Chủ đề chăm xe - chơi xe.html">My VinFast Moment</a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="trangchu1">
-          <a href="./Thư viện.html"><b>Liên hệ</b></a>
-        </li>
+      <li class="trangchu1">
+        <a href="#"><b>Liên hệ</b></a>
+      </li>
 
 
-        <li class="trangchu2">
-          <hr>
-          <a href="./Đăng nhập.html"><b>Đăng nhập</b></a>
-        </li>
-        <li class="trangchu2">
-          <a href="#"><b>Đăng ký</b></a>
-        </li>
-      </ul>
-      <div class="timkiem-taikhoan">
-        <i class="fa-solid fa-magnifying-glass fa-xl"> </i> 
-        <img width="20px" height="30px" src="../Hình ảnh/icons8_vertical_line_50px_3.png" alt="">
-        <a href="./Đăng nhập.html">
-          
-          <button class="btn-dangnhap" value="Đăng nhập"  >Đăng nhập</button>
+      <li class="trangchu2">
+        <hr>
+        <a onclick="Form_DangNhap()"><b>Đăng nhập</b></a>
+      </li>
+      <li class="trangchu2">
+        <a onclick="Form_DangKy()"><b>Đăng ký</b></a>
+      </li>
+    </ul>
+    <div class="timkiem-taikhoan">
+      <i class="fa-solid fa-magnifying-glass fa-xl"> </i> 
+      <img width="20px" height="30px" src="../Hình ảnh/icons8_vertical_line_50px_3.png" alt="">
+      <button id="btn_nofication"  onclick="Form_ThongBao()"><img src="../Hình ảnh/icons8_notification_1.svg" alt="" width="100%" height="100%"></button>
+      <div id="form_notifications" style="display: none;">
+        <h2>Thông báo</h2>
+
+
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/card-diendan-2.png" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">12 phút trước</div>
+          </div>
+        </a>
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/congnghe-avt2.jpg" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng 2
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">1 tiếng trước</div>
+          </div>
+        </a>
+        <a  href="#" class="card_notification">
+          <img src="../Hình ảnh/congnghe-avt1.jpg" alt="Lỗi r">
+          <div class="notification_khung_content">
+              <div class="title_content" >
+                <p class="title_content_bold">
+                  Tên người dùng 3
+                </p>
+                 <p>Bạn có thông báo</p>
+              </div>
+              <div class="time_content">30 phút trước</div>
+          </div>
         </a>
 
-        <button class="btn-dangky" value="Đăng ký">Đăng ký</button>
+
       </div>
-      <div class="menu-mobile-btn">
-        <i class="fa-solid fa-bars" style="color: #020203;"></i>
+      <div id="ctl_dangnhap_dangky_user">
+        <a  href="./Đăng nhập_User.html">
+        <button class="btn-dangnhap" value="Đăng nhập" onclick="Form_DangNhap()" > Đăng nhập</button>
+      </a>
+        <button class="btn-dangky" value="Đăng ký" onclick="Form_DangKy()" >Đăng ký</button>
       </div>
+      <div id="ctl_thongtintaikhoan">
+        <div class="ctl_user_header">
+          <div onclick="hienthichucnanguser()" id="user-control_header">
+          
+            <a href="#"><div id="name_user_menu"></div><img id="avt_user_menu" src="" alt="thông báo"><i class="fa-solid fa-angle-down"></i>
+            </a>
+          </div>
+
+          <div id="khung_ctl_user_header" style="display: none;">
+            <button id="btn_dangxuat" onclick="Form_DangNhap()">Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+      
     </div>
-    <!-- END ---------------------------------------------------------------------------------MENU -->
+    <div class="menu-mobile-btn">
+      <i class="fa-solid fa-bars" style="color: #020203;"></i>
+    </div>
+  </div>
+  <!-- END ---------------------------------------------------------------------------------MENU -->
 
     <!-- START ---------------------------------------------------------------------------------------------SLIDER -->
     <div class="slider">
@@ -1843,9 +1879,6 @@
       </div>
     </footer>
 
-    <script src="./JS/jquery-3.7.0.min.js"></script>
-
-    <script src="./Menu/Menu.js">  </script>
-    <script src="./JS/index.js">  </script>
+  
   </body>
 </html>

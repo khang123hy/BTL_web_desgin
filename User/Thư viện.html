@@ -31,127 +31,117 @@
 
      <link rel="stylesheet" href="./CSS/Thư viện.css">
      <link rel="stylesheet" href="./CSS/index.css">
+     <script src="../Menu/Menu.js">  </script>
+
 </head>
 <body>
-    <!-- START ---------------------------------------------------------------------------------MENU -->
-    <div id="menu">
-        <div class="logo">
-          <img
-            width="150px"
-            max-height="74px"
-            src="./Hình ảnh/logo.png"
-            alt=""
-            class="logoPC"
-          />
-          <img
-            width="50px"
-            max-height="100%"
-            src="./Hình ảnh/LOGO2.png"
-            alt=""
-            class="logoTL_MB"
-          />
-        </div>
-        <div class="timkiem-mobile-btn">
-          <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
-        </div>
-        
-        <ul class="menu2">
-          <li class="trangchu1">
-            <a  href="./index.html"> <b> Trang chủ</b> </a>
+  <!-- START ---------------------------------------------------------------------------------MENU -->
+  <div id="menu">
+    <div class="logo">
+      <img
+        width="150px"
+        max-height="74px"
+        src="../Hình ảnh/logo.png"
+        alt=""
+        class="logoPC"
+      />
+      <img
+        width="50px"
+        max-height="100%"
+        src="../Hình ảnh/LOGO2.png"
+        alt=""
+        class="logoTL_MB"
+      />
+    </div>
+    <div class="timkiem-mobile-btn">
+      <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i>
+    </div>
+    <ul class="menu2">
+      <li class="trangchu">
+        <a  onclick="Form_TrangChu()"> <b> Trang chủ</b> </a>
+      </li>
+    
+      <li class="trangchu1">
+        <a  onclick="Form_DienDan()"
+          ><b>Diễn đàn </b> <i class="fa-solid fa-angle-down"></i
+        ></a>
+        <ul class="submenu">
+          <li>
+            <a onclick="Form_ChuDe()">Chăm sóc xe - chơi xe</a>
           </li>
-          <li class="trangchu1">
-            <a href="#trang"> <b>Tin tức</b> <i class="fa-solid fa-angle-down"></i></a>
-            <ul class="submenu">
-              <li>
-                <a href="./Đăng nhập.html">Tin tức VinFast</a>
-              </li>
-              <li>
-                <a href="#">Thị trường xe điện</a>
-              </li>
-              <li>
-                <a href="./Quản lý thông tin.html">Công nghệ</a>
-              </li>
-              <li>
-                <a href="#">Đời sống</a>
-              </li>
-              <li>
-                <a href="#">Du lịch</a>
-              </li>
-              <li>
-                <a href="#">Ảnh đẹp</a>
-              </li>
-            </ul>
+          <li>
+            <a onclick="Form_ChuDe()">Công nghệ ô tô</a>
           </li>
-  
-          <li class="trangchu1">
-            <a href="#trang"
-              ><b>Diễn đàn </b> <i class="fa-solid fa-angle-down"></i
-            ></a>
-            <ul class="submenu">
-              <li>
-                <a href="./Đăng nhập.html">Chăm sóc xe - chơi xe</a>
-              </li>
-              <li>
-                <a href="#">Công nghệ ô tô</a>
-              </li>
-              <li>
-                <a href="#">Đánh giá xe</a>
-              </li>
-              <li>
-                <a href="./Quản lý thông tin.html">Giao thông - lái xe</a>
-              </li>
-              <li>
-                <a href="#">Hỏi - đáp</a>
-              </li>
-              <li>
-                <a href="#">Đánh giá xe</a>
-              </li>
-              <li>
-                <a href="#">Phong cách sống</a>
-              </li>
-              <li>
-                <a href="#">Tâm sự</a>
-              </li>
-              <li>
-                <a href="#">Tin tức</a>
-              </li>
-              <li>
-                <a href="#">My VinFast Moment</a>
-              </li>
-              
-            </ul>
+          <li>
+            <a onclick="Form_ChuDe()">Đánh giá xe</a>
           </li>
-          <li class="trangchu1">
-            <a href="#"><b>Sự kiện</b></a>
+          <li>
+            <a onclick="Form_ChuDe()">Giao thông - lái xe</a>
           </li>
-          <li class="trangchu">
-            <a href="#"><b>Thư viện</b></a>
+          <li>
+            <a onclick="Form_ChuDe()">Hỏi - đáp</a>
           </li>
-       
-        <li class="trangchu2">
-          <hr>
-          <a href="./Đăng nhập.html"><b>Đăng nhập</b></a>
-        </li>
-        <li class="trangchu2">
-          <a href="#"><b>Đăng ký</b></a>
-        </li>
+          <li>
+            <a onclick="Form_ChuDe()">Đánh giá xe</a>
+          </li>
+          <li>
+            <a onclick="Form_ChuDe()">Phong cách sống</a>
+          </li>
+          <li>
+            <a onclick="Form_ChuDe()">Tâm sự</a>
+          </li>
+          <li>
+            <a onclick="Form_ChuDe()">Tin tức</a>
+          </li>
+          <li>
+            <a onclick="Form_ChuDe()">My VinFast Moment</a>
+          </li>
         </ul>
-        <div class="timkiem-taikhoan">
-          <i class="fa-solid fa-magnifying-glass fa-xl"> </i> 
-          <img width="20px" height="30px" src="./Hình ảnh/icons8_vertical_line_50px_3.png" alt="">
-          <a href="./Đăng nhập.html">
-            
-            <button class="btn-dangnhap" value="Đăng nhập"  >Đăng nhập</button>
-          </a>
-  
-          <button class="btn-dangky" value="Đăng ký">Đăng ký</button>
-        </div>
-        <div class="menu-mobile-btn">
-          <i class="fa-solid fa-bars" style="color: #020203;"></i>
-        </div>
-     
+      </li>
+
+      <li class="trangchu1">
+        <a href="#"><b>Liên hệ</b></a>
+      </li>
+
+
+      <li class="trangchu2">
+        <hr>
+        <a onclick="Form_DangNhap()"><b>Đăng nhập</b></a>
+      </li>
+      <li class="trangchu2">
+        <a onclick="Form_DangKy()"><b>Đăng ký</b></a>
+      </li>
+    </ul>
+    <div class="timkiem-taikhoan">
+      <i class="fa-solid fa-magnifying-glass fa-xl"> </i> 
+      <img width="20px" height="30px" src="../Hình ảnh/icons8_vertical_line_50px_3.png" alt="">
+      
+      <div id="ctl_dangnhap_dangky_user">
+        <a  href="./Đăng nhập_User.html">
+        <button class="btn-dangnhap" value="Đăng nhập" onclick="Form_DangNhap()" > Đăng nhập</button>
+      </a>
+        <button class="btn-dangky" value="Đăng ký" onclick="Form_DangKy()" >Đăng ký</button>
       </div>
-      <!-- END ---------------------------------------------------------------------------------MENU -->
+      <div id="ctl_thongtintaikhoan">
+        <div class="ctl_user_header">
+          <div onclick="hienthichucnanguser()" id="user-control_header">
+            <a href="#"><img src="../Hình ảnh/congnghe-avt1.jpg" alt="thông báo"><i class="fa-solid fa-angle-down"></i>
+            </a>
+          </div>
+
+          <div id="khung_ctl_user_header" style="display: none;">
+            <button id="btn_dangxuat" onclick="Form_DangNhap()">Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="menu-mobile-btn">
+      <i class="fa-solid fa-bars" style="color: #020203;"></i>
+    </div>
+  </div>
+  <!-- END ---------------------------------------------------------------------------------MENU -->
+
       <main>
         <div id="timkiem-contener">
             <div class="timkiems">

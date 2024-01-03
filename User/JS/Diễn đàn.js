@@ -1,121 +1,146 @@
-function hienthibaiviet() {
-    // Lấy danh sách bình luận từ localStorage
-    var danhSachBinhLuan = JSON.parse(localStorage.getItem('LIST_BAIVIET')) || [];
-    const LIST_BAIVIET = 'LIST_BAIVIET';
-
-    // Lấy phần hiển thị nội dung bình luận
-    var container = document.querySelector('.list_baiviets'); // Thay đổi thành .list_baiviets
-    // Xóa nội dung hiện tại
-    container.innerHTML = '';
-    // Hiển thị từng bình luận
-    danhSachBinhLuan.forEach(function (baiviet) { // Thay đổi thành danhSachBinhLuan
-        // Tạo phần tử cho bình luận
-        var divbaiviet = document.createElement('a');
-        divbaiviet.href = '/User/Bài viết.html'; // Sửa thành href
-        divbaiviet.classList.add('linkbaiviet');
-        // Tạo nội dung bình luận
-        var noiDung = '<hr>' + '<img class="avt-baiviet" src="' + baiviet.hinhanh + '" alt="">' +
-            ' <div class="tieudes-baiviet">' +
-            '<div class="tieudechinh-baiviet">' + baiviet.tieude + '</div>' +
-            '<div class="tacgia">' + baiviet.idnguoidung + '</div>' +
-            '        <div class="thoigiandang">' + baiviet.thoiGianhientai + '</div>' +
-            '</div>' +
-            ' <div class="binhluan">' +
-            '<div class="view-binhluan">499</div>' +
-            ' <h3>Bình luận</h3>' +
-            '</div>';
-
-        // Gán nội dung vào phần tử
-        divbaiviet.innerHTML = noiDung;
-
-        // Thêm phần tử vào container
-        container.appendChild(divbaiviet);
-    });
+function btn_taobaiviet() {
+  document.getElementById("overlay").style.display = "block";
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    hienthibaiviet();
+document.addEventListener("DOMContentLoaded", function () {
+  var form_ctr_binhluan = document.querySelector(".taobaiviet");
+  var _user = JSON.parse(localStorage.getItem("user_doan"));
+  if (!_user) {
+    form_ctr_binhluan.style.display = "none";
+  }
 });
 
+var app = angular.module("AppDienDan", []);
+app.controller("User_DienDan", function ($scope, $http) {
+  var _user = JSON.parse(localStorage.getItem("user_doan"));
+  $scope.listPosts;
 
-document.getElementById('btn_taobaiviet').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'block';
-  });
+  $scope.listChuDe;
+
+  $scope.closeOverlay = function () {
+    document.getElementById("overlay").style.display = "none";
+  };
+
+  let dataBaiViet = JSON.parse(localStorage.getItem("LIST_BAIVIET")) || [];
+
   
-  function closeOverlay() {
-    document.getElementById('overlay').style.display = 'none';
-  }
-  
+  $scope.BaiViet = {
+    iD_Post: 0,
+    iD_User: "",
+    iD_Topic: "",
+    title: "",
+    synopsis: "",
+    list_json_posts: [{ image: "", content: "" }],
+  };
 
-// ---------------------------------------------------------------------------------chức năng thêm bài viết
-var btnthem = document.getElementById('btn_dangbaiviet');
-var tieude = document.getElementById('dienthongtin_tieude');
-var noidung = document.getElementById('dienthongtin_noidung');
-var hinhanh = document.getElementById('dienthongtin_hinhanh');
-var idbaiviet ;
-var id_nguoidung = '3';
-var machude = document.getElementById('dienthongtin_chude');
-    // Lấy thời gian hiện tại
-    var thoiGianHienTai = new Date();
-    var ngayThangNam = thoiGianHienTai.toLocaleDateString();
-    var gioPhutGiay = thoiGianHienTai.toLocaleTimeString();
-    var thoiGianhientai_value = ngayThangNam + ' lúc ' + gioPhutGiay;    
+  $scope.addPost = function () {
+    $scope.BaiViet.list_json_posts.push({ image: "", content: "" });
+  };
 
-btnthem.addEventListener('click', function () {
-    var idnguoidung_Value = id_nguoidung.textContent;;
-    var machude_Value = machude.value;
-    var tieude_Value = tieude.value;
-    var noidung_Value = noidung.value;
+  $scope.handleFileChange = function (input) {
+    var fileInput = input;
+    var index = fileInput.id.split("_")[1];
+    var file = fileInput.files[0];
+    var fileName = file.name;
 
-    const fr = new FileReader();
-    fr.readAsDataURL(hinhanh.files[0]);
-    fr.addEventListener('load', () => {
-        const originalImage = new Image();
-        originalImage.src = fr.result;
+    // Tạo đường dẫn đầy đủ
+    var newImagePath = "../Hình ảnh/Hình ảnh sử dụng/" + fileName;
 
-        originalImage.onload = function () {
-            const canvas = document.createElement('canvas');
-            const maxWidth = 800; // Đặt chiều rộng tối đa mong muốn
-            const scaleRatio = maxWidth / originalImage.width;
-            
-            canvas.width = maxWidth;
-            canvas.height = originalImage.height * scaleRatio;
+    console.log("Đường dẫn đầy đủ:", newImagePath);
 
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
+    // Gán đường dẫn đầy đủ vào thuộc tính image của list_json_posts
+    $scope.BaiViet.list_json_posts[index].image = newImagePath;
+  };
 
-            // Chuyển đổi hình ảnh nén thành base64
-            const compressedImage = canvas.toDataURL('image/jpeg', 0.2); // 0.8 là chất lượng nén, có thể điều chỉnh
+  // Lấy thời gian hiện tại
+  var thoiGianHienTai = new Date();
+  var ngayThangNam = thoiGianHienTai.toLocaleDateString();
+  var gioPhutGiay = thoiGianHienTai.toLocaleTimeString();
+  var thoiGianhientai_value = ngayThangNam + " lúc " + gioPhutGiay;
 
-        const LIST_BAIVIET = 'LIST_BAIVIET';
-        let baiviets = JSON.parse(localStorage.getItem(LIST_BAIVIET)) || [];
+  $scope.page = 1;
+  $scope.pageSize = 10;
+  $scope.keywords = "";
+  $scope.listPosts;
 
-            // Tìm id bài viết lớn nhất trong danh sách
-            const maxId = baiviets.reduce((max, baiviet) => Math.max(max, baiviet.idbaiviet || 0), 0);
+  $scope.LoadBaiViet = function () {
+    // Tính chỉ số bắt đầu và kết thúc của dữ liệu cần hiển thị
+    let startIndex = 0; // Bắt đầu từ phần tử đầu tiên
+    let endIndex = $scope.pageSize;
 
-            // Tạo id mới bằng cách tăng giá trị lớn nhất hiện tại lên 1
-            idbaiviet = maxId + 1;
+    // Lọc danh sách bài viết dựa trên từ khóa tìm kiếm
+    let filteredPosts;
 
-            // Người dùng không tồn tại, thực hiện thêm mới như trước
-            baiviets.push({
-                idbaiviet: idbaiviet,
-                idnguoidung: idnguoidung_Value,
-                machude: machude_Value,
-                tieude: tieude_Value,
-                noidung: noidung_Value,
-                hinhanh: compressedImage ,
-                thoiGianhientai: thoiGianhientai_value,
-            });
-
-            // Lưu mảng đã cập nhật vào local storage
-            localStorage.setItem(LIST_BAIVIET, JSON.stringify(baiviets));
-
-            // Hiển thị dữ liệu trong console
-            console.log(baiviets);
-
-            // Refresh dữ liệu trong bảng
-            hienThiDuLieu();
-        
+    if ($scope.keywords.trim() === "") {
+      // Nếu từ khóa trống, hiển thị toàn bộ danh sách bài viết
+      filteredPosts = dataBaiViet;
+    } else {
+      // Áp dụng bộ lọc dựa trên từ khóa
+      filteredPosts = dataBaiViet.filter(function (baiviet) {
+        return baiviet.title
+          .toLowerCase()
+          .includes($scope.keywords.toLowerCase());
+      });
     }
+
+    // Lấy danh sách bài viết theo pageSize
+    $scope.listPosts = filteredPosts.slice(startIndex, endIndex);
+  };
+
+  $scope.btn_xemthem = function () {
+    // Tăng kích thước pageSize
+    $scope.pageSize += 5;
+    $scope.LoadBaiViet();
+  };
+
+  $scope.LoadBaiViet();
+
+  $scope.handleKeyUp = function (event) {
+    if (event.keyCode === 13) {
+      // Khi nhấn Enter, cập nhật từ khóa và tải lại danh sách bài viết
+      $scope.keywords = inp_timkiem_header.value;
+      $scope.LoadBaiViet();
+    }
+  };
+
+  $scope.listChuDe;
+  $scope.GetChuDe = function () {
+    let dataChuDe = JSON.parse(localStorage.getItem("LIST_CHUDE")) || [];
+    $scope.listChuDe = dataChuDe;
+  };
+  $scope.GetChuDe();
+
+  $scope.btn_dangbaiviet = function () {
+    $scope.BaiViet.iD_User=_user.iD_User;
+
+    const maxId = dataBaiViet.reduce(
+      (max, baiviet) => Math.max(max, baiviet.iD_Post || 0),
+      0
+    );
+
+    // Set the new ID for the current post
+    $scope.BaiViet.iD_Post = maxId + 1;
+
+    // Add the new post to the existing data
+    dataBaiViet.push({
+      iD_Post: $scope.BaiViet.iD_Post,
+      iD_User: $scope.BaiViet.iD_User,
+      iD_Topic: $scope.BaiViet.iD_Topic,
+      title: $scope.BaiViet.title,
+      synopsis: $scope.BaiViet.synopsis,
+      list_json_posts: $scope.BaiViet.list_json_posts,
+      createdDate: thoiGianhientai_value,
     });
+
+    // Save the updated data back to localStorage
+    localStorage.setItem("LIST_BAIVIET", JSON.stringify(dataBaiViet));
+    console.log(dataBaiViet);
+    $scope.LoadBaiViet();
+    document.getElementById("overlay").style.display = "none";
+
+
+  };
+
+  $scope.GetChuDe();
+  $scope.LoadBaiViet();
 });
